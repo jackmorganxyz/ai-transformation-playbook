@@ -1,11 +1,11 @@
 ---
 title: Task Inventory And Scoring Worksheet
-description: Reusable worksheet for task inventory, rubric scoring, and posture selection.
+description: Worksheet for task inventory, rubric scoring, and posture selection.
 ---
 
 # Task Inventory And Scoring Worksheet
 
-Copy the table below into a spreadsheet, issue, or working doc.
+Copy the tables below into a spreadsheet, issue, or working doc.
 
 ## Inventory fields
 

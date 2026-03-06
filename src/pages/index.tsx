@@ -1,47 +1,62 @@
 import type {ReactNode} from 'react';
 import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
-import Heading from '@theme/Heading';
-
 import styles from './index.module.css';
 
-const highlights = [
+const steps = [
   {
-    title: 'Vendor-neutral framework',
-    body: 'Keep the core playbook tool-agnostic. Put named vendors and model choices only in clearly marked examples.',
-  },
-  {
-    title: 'Human review by design',
-    body: 'Every example spec includes explicit approval boundaries, reversibility logic, and security notes.',
-  },
-  {
-    title: 'GitHub-native contribution flow',
-    body: 'Structured templates, frontmatter validation, markdown linting, and GitHub Actions enforce the content contract.',
-  },
-];
-
-const metrics = [
-  {value: '5', label: 'core framework chapters seeded for v1'},
-  {value: '9', label: 'role guides across three target verticals'},
-  {value: '12', label: 'design-spec examples in the launch library'},
-];
-
-const pathways = [
-  {
-    title: 'Builders and consultants',
-    body: 'Use the framework, worksheets, and examples to structure engagements without sliding into vendor-led sales copy.',
+    title: '1. Understand the framework',
+    body: 'See the full sequence, outputs, and rules before you choose a workflow.',
     href: '/docs/overview',
-    label: 'Open the framework',
   },
   {
-    title: 'Internal transformation teams',
-    body: 'Run company research, score tasks, and design pilots with governance and measurement built in from the start.',
+    title: '2. Research the company',
+    body: 'Capture the business model, broken workflows, systems, and hard constraints.',
+    href: '/docs/company-research',
+  },
+  {
+    title: '3. Map workflows',
+    body: 'Break one workflow into real tasks with owners, triggers, inputs, and outputs.',
+    href: '/docs/opportunity-mapping',
+  },
+  {
+    title: '4. Score tasks',
+    body: 'Use one rubric to choose the right posture for each task.',
     href: '/docs/task-scoring',
-    label: 'Open the scorecard',
   },
   {
-    title: 'Contributors',
-    body: 'Add new examples, role guides, or reference patterns through copyable templates and enforced content schemas.',
+    title: '5. Design one pilot',
+    body: 'Define the trigger, inputs, approvals, outputs, security review, and rollback path.',
+    href: '/docs/automation-design',
+  },
+  {
+    title: '6. Review constraints',
+    body: 'Check security, deployment, and token cost before anything goes live.',
+    href: '/docs/security',
+  },
+  {
+    title: '7. Launch with controls',
+    body: 'Start narrow. Measure value, quality, and control. Expand only after review.',
+    href: '/docs/automation-design/pilot-rollout-measurement-governance',
+  },
+];
+
+const resources = [
+  {
+    title: 'Decision tools',
+    body: 'Assessment worksheet, scoring sheet, security checklist, deployment checklist, and token worksheet.',
+    href: '/docs',
+    label: 'Open start page',
+  },
+  {
+    title: 'Examples',
+    body: 'Role guides, design specs, and reusable patterns for common workflow shapes.',
+    href: '/docs/agent-library',
+    label: 'Browse examples',
+  },
+  {
+    title: 'Templates',
+    body: 'Copy the exact template for a new example, role guide, or reference pattern.',
     href: '/docs/contributing',
     label: 'Open contribution docs',
   },
@@ -52,107 +67,47 @@ function HomePage(): ReactNode {
     <main className={styles.page}>
       <header className={styles.hero}>
         <div className={`container ${styles.heroShell}`}>
-          <div className={styles.backgroundOrbA} />
-          <div className={styles.backgroundOrbB} />
           <div className={styles.heroCopy}>
-            <span className={styles.eyebrow}>Open-source transformation framework</span>
-            <Heading as="h1" className={styles.title}>
-              Practical AI transformation,
-              <span className={styles.accent}> without the vendor trap.</span>
-            </Heading>
+            <p className={styles.eyebrow}>Docs-first and vendor-neutral</p>
+            <h1 className={styles.title}>A clear manual for starting AI work.</h1>
             <p className={styles.lede}>
-              AI Transformation Playbook packages company research, workflow
-              discovery, task scoring, automation design, and pilot governance
-              into a docs-first project that teams can fork, improve, and cite.
+              Use this repo to research a company, map workflows, score tasks,
+              pick a pilot, and launch it with review, security, and
+              governance built in.
             </p>
             <div className={styles.actions}>
               <Link className={`button button--primary button--lg ${styles.primaryAction}`} to="/docs">
-                Start the playbook
+                Start here
               </Link>
               <Link
                 className={`button button--outline button--lg ${styles.secondaryAction}`}
                 to="/docs/agent-library">
-                Browse example specs
+                Browse examples
               </Link>
             </div>
           </div>
           <aside className={styles.heroPanel}>
-            <p className={styles.panelLabel}>What ships in v1</p>
-            <ul className={styles.panelList}>
-              <li>
-                <strong>Canonical task rubric</strong>
-                <span>
-                  One 1-5 scoring model that yields both Human Value Score and
-                  Automation Fit Score.
-                </span>
-              </li>
-              <li>
-                <strong>Vertical coverage</strong>
-                <span>
-                  Professional services, SaaS, and ecommerce role guides seeded
-                  with linked examples.
-                </span>
-              </li>
-              <li>
-                <strong>Design-spec-first library</strong>
-                <span>
-                  Examples stay in docs for v1 so contributors improve the
-                  decision model before runnable code lands.
-                </span>
-              </li>
-            </ul>
+            <p className={styles.panelLabel}>Start in this order</p>
+            <ol className={styles.panelList}>
+              {steps.map((step) => (
+                <li key={step.title}>
+                  <Link to={step.href}>{step.title}</Link>
+                  <span>{step.body}</span>
+                </li>
+              ))}
+            </ol>
           </aside>
         </div>
       </header>
 
       <section className={styles.section}>
         <div className="container">
-          <div className={styles.sectionHeader}>
-            <Heading as="h2">Principles</Heading>
-            <p>
-              The site is opinionated about structure, not about vendors. The
-              framework optimizes for reuse, traceability, and safer adoption.
-            </p>
-          </div>
           <div className={styles.grid}>
-            {highlights.map((item) => (
+            {resources.map((item) => (
               <article key={item.title} className={styles.card}>
-                <Heading as="h3">{item.title}</Heading>
+                <h2>{item.title}</h2>
                 <p>{item.body}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className={styles.section}>
-        <div className="container">
-          <div className={styles.grid}>
-            {metrics.map((metric) => (
-              <article key={metric.label} className={styles.metric}>
-                <strong>{metric.value}</strong>
-                <span>{metric.label}</span>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className={styles.section}>
-        <div className="container">
-          <div className={styles.sectionHeader}>
-            <Heading as="h2">Choose a path</Heading>
-            <p>
-              Start with the framework, score the work, and then move into
-              vertical guidance or reusable example specs.
-            </p>
-          </div>
-          <div className={styles.pathways}>
-            {pathways.map((pathway) => (
-              <article key={pathway.title} className={styles.pathway}>
-                <Heading as="h3">{pathway.title}</Heading>
-                <p>{pathway.body}</p>
-                <Link to={pathway.href}>{pathway.label}</Link>
+                <Link to={item.href}>{item.label}</Link>
               </article>
             ))}
           </div>
@@ -166,7 +121,7 @@ export default function Home(): ReactNode {
   return (
     <Layout
       title="AI Transformation Playbook"
-      description="Vendor-neutral guidance for company research, task scoring, automation design, and agent example specs.">
+      description="A docs-first playbook for researching workflows, scoring tasks, and launching controlled AI pilots.">
       <HomePage />
     </Layout>
   );

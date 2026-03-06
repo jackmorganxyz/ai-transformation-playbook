@@ -17,9 +17,8 @@ risks:
 
 ## Industry Context
 
-Account managers synthesize delivery, pipeline, and relationship signals into a
-single client view. Most of the time cost sits in preparation and follow-through
-rather than in the conversation itself.
+Account managers build a client view from delivery, pipeline, and meeting
+signals. Most of the time cost sits in prep and follow-through.
 
 ## Common Low-Value Task Clusters
 
@@ -50,9 +49,8 @@ rather than in the conversation itself.
 
 ## Scorecard Usage
 
-Separate client preparation work from the actual relationship interaction.
-Preparation tasks often score well for automation fit, while negotiation,
-escalation handling, and trust repair stay human-led.
+Separate prep work from the actual relationship interaction. Prep tasks often
+fit automation well. Negotiation, escalation, and trust repair stay human-led.
 
 ## Linked Example Specs
 

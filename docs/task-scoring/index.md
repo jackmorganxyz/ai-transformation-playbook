@@ -1,12 +1,11 @@
 ---
 title: Task Scoring
-description: Apply one canonical 1-5 rubric and map every task to the right automation posture.
+description: Score each task with one rubric and choose the right posture.
 ---
 
 # Task Scoring
 
-The scoring system is intentionally simple: one 1-5 rubric, two derived scores,
-and one posture decision.
+Use one rubric for every task. Then choose the posture.
 
 ## Required fields
 
@@ -20,7 +19,7 @@ Every scored task uses the same seven fields:
 - compliance sensitivity
 - human judgment/relationship sensitivity
 
-## Outputs
+## Use these pages
 
 - [Canonical task rubric](canonical-task-rubric.md)
 - [Task inventory and scoring worksheet](task-inventory-scoring-worksheet.md)

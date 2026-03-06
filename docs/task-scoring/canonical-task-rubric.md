@@ -1,11 +1,11 @@
 ---
 title: Canonical Task Rubric
-description: The standard 1-5 task rubric plus the formulas for Human Value Score and Automation Fit Score.
+description: The standard 1-5 rubric plus the rules for Human Value Score and Automation Fit Score.
 ---
 
 # Canonical Task Rubric
 
-Score each field from 1 to 5.
+Score each field from 1 to 5. Then calculate two averages.
 
 ## Scoring table
 
@@ -19,9 +19,9 @@ Score each field from 1 to 5.
 | Compliance sensitivity | High regulatory or policy exposure | Moderate control requirements | Low sensitivity |
 | Human judgment/relationship sensitivity | Trust, persuasion, or nuanced judgment dominates | Mixed | Low judgment or relationship load |
 
-## Derived scores
+## Calculate the two scores
 
-Use these formulas after all seven fields are scored.
+Use these formulas after you score all seven fields.
 
 ### Automation Fit Score
 
@@ -35,12 +35,10 @@ Average:
 - `6 - compliance sensitivity`
 - `6 - human judgment/relationship sensitivity`
 
-Interpretation:
-
-- higher is better for automation
-- 1.0 to 2.9 means weak automation fit
-- 3.0 to 4.2 means workable fit with design care
-- 4.3 to 5.0 means strong automation fit
+- Higher is better for automation.
+- `1.0` to `2.9`: weak fit
+- `3.0` to `4.2`: workable with design care
+- `4.3` to `5.0`: strong fit
 
 ### Human Value Score
 
@@ -51,13 +49,10 @@ Average:
 - human judgment/relationship sensitivity
 - `6 - reversibility`
 
-Interpretation:
+- Higher means the task should stay closer to human control.
+- A task can score high on both measures. That often points to `agent-assist`.
 
-- higher means the task should stay closer to human control
-- high impact can still score high on both measures, which often points to
-  `agent-assist` instead of full automation
-
-## Outcome rules
+## Choose the posture
 
 Map every task in this order:
 
@@ -67,10 +62,9 @@ Map every task in this order:
    `2.5`, use `full automation candidate`.
 4. Otherwise use `partial automation`.
 
-## Notes
+## Keep these distinctions
 
 - A strong automation score does not remove the need for approval boundaries.
-- High-compliance, high-judgment work usually moves to `agent-assist`, not full
-  automation.
+- High-compliance or high-judgment work usually lands in `agent-assist`.
 - A low-frequency task can still be worth automating if the business impact and
   control benefits are material.

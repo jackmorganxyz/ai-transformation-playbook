@@ -17,8 +17,8 @@ risks:
 
 ## Industry Context
 
-Ecommerce support combines high ticket volume with policy-heavy exception
-handling. The largest opportunity is usually in triage and response preparation.
+Ecommerce support combines high volume with policy-heavy exception handling. The
+largest opportunity is triage and response prep.
 
 ## Common Low-Value Task Clusters
 
@@ -49,8 +49,8 @@ handling. The largest opportunity is usually in triage and response preparation.
 
 ## Scorecard Usage
 
-Triage and summarization frequently score high on automation fit. Refund
-decisions and customer goodwill exceptions usually stay in `agent-assist`.
+Triage and summarization often score high on automation fit. Refund decisions
+and goodwill exceptions usually stay in `agent-assist`.
 
 ## Linked Example Specs
 

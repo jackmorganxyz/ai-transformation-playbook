@@ -1,12 +1,11 @@
 ---
 title: Contributing
-description: The contribution model, review statuses, and template paths for this project.
+description: How to add a new example, role guide, or reference pattern.
 ---
 
 # Contributing
 
-This section documents the content contract used by the public site and the
-GitHub review flow.
+Use this repo to add one of three things.
 
 ## Contribution types
 
@@ -14,14 +13,21 @@ GitHub review flow.
 - new vertical or role guide
 - new reference pattern
 
+## Do this
+
+1. Copy the right template.
+2. Put the file in the right docs folder.
+3. Run `npm run check`.
+4. Open a PR.
+
 ## Non-negotiable rules
 
 - every submission declares assumptions, risks, and review status
-- every example makes human approval, security, and token-cost notes explicit
-- examples and guides must map back to a real workflow
+- every example makes approval, security, and token-cost notes explicit
+- examples and guides map back to a real workflow
 - marketing copy is rejected
 
-## Read this next
+## Use these pages
 
 - [Content contracts](content-contracts.md)
 - [Review workflow](review-workflow.md)

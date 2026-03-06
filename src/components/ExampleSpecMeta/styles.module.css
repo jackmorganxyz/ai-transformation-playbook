@@ -1,5 +1,5 @@
 .wrapper {
-  margin: 2rem 0 2.5rem;
+  margin: 1.5rem 0 2rem;
 }
 
 .chips {
@@ -14,7 +14,7 @@
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.8);
   color: var(--playbook-ink);
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   font-weight: 600;
   padding: 0.55rem 0.9rem;
 }
@@ -28,9 +28,8 @@
 .card {
   border: 1px solid rgba(10, 29, 49, 0.08);
   border-radius: 1rem;
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(244, 239, 232, 0.88));
-  box-shadow: 0 18px 36px rgba(10, 29, 49, 0.08);
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 14px 28px rgba(10, 29, 49, 0.06);
   padding: 1rem 1.1rem;
 }
 
@@ -38,7 +37,7 @@
   margin-bottom: 0.75rem;
   color: var(--playbook-ink);
   font-family: var(--playbook-display);
-  font-size: 1rem;
+  font-size: 0.96rem;
   text-transform: uppercase;
   letter-spacing: 0.06em;
 }

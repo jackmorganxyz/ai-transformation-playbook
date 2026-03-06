@@ -17,9 +17,8 @@ risks:
 
 ## Industry Context
 
-Professional services delivery leads spend significant time normalizing inputs
-from consultants, timelines, and client channels into status views that
-leadership and clients can trust.
+Delivery leads spend time stitching project updates into status and risk views.
+The drag is collection and cleanup, not judgment.
 
 ## Common Low-Value Task Clusters
 
@@ -50,9 +49,9 @@ leadership and clients can trust.
 
 ## Scorecard Usage
 
-Score collection, summarization, and exception flagging separately from client
-negotiation or expectation-setting. The former often lands in `agent-assist` or
-`partial automation`; the latter usually remains human-led.
+Score collection and summarization separately from client negotiation. The
+first group often fits `agent-assist` or `partial automation`. Client
+commitment stays human-led.
 
 ## Linked Example Specs
 

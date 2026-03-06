@@ -1,6 +1,6 @@
 ---
 title: Security Review Checklist
-description: Reusable checklist for reviewing agent designs before launch.
+description: Checklist for reviewing agent designs before launch.
 ---
 
 # Security Review Checklist

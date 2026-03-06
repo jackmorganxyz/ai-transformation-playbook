@@ -1,12 +1,12 @@
 ---
 title: Token Budget And On-Prem Decision Worksheet
-description: Reusable worksheet for estimating token demand and deciding whether local deployment is justified.
+description: Worksheet for estimating token demand and deciding whether local deployment is justified.
 ---
 
 # Token Budget And On-Prem Decision Worksheet
 
-Use this worksheet when you need to weigh hosted inference costs against a
-local-first or hybrid pattern.
+Use this when you need to weigh hosted inference costs against a local-first or
+hybrid pattern.
 
 ## Cost worksheet
 

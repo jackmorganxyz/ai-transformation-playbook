@@ -11,4 +11,4 @@ Which vertical and role does this guide serve, and what workflow evidence suppor
 - [ ] Industry context is grounded in real work
 - [ ] Scorecard usage is linked back to the canonical rubric
 - [ ] Linked examples are included
-- [ ] `npm run validate:content` passes
+- [ ] `npm run check` passes

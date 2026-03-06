@@ -1,6 +1,6 @@
 ---
 title: Review Workflow
-description: How discussions, issues, validation, and review statuses work together in this repo.
+description: How discussions, issues, validation, and review statuses work together.
 ---
 
 # Review Workflow

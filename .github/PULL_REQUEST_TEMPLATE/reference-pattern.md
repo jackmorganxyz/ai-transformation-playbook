@@ -12,4 +12,4 @@ Explain the shared workflow shape and where it should or should not be reused.
 - [ ] Human approval points are explicit
 - [ ] Security notes are explicit
 - [ ] Token-cost notes are explicit
-- [ ] `npm run validate:content` passes
+- [ ] `npm run check` passes

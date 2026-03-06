@@ -1,12 +1,12 @@
 ---
 title: Content Contracts
-description: The frontmatter and section requirements enforced by the repo's validation rules.
+description: The frontmatter and section requirements enforced by validation.
 ---
 
 # Content Contracts
 
-Validation is intentionally strict so contributors can add material without
-maintainers restructuring it by hand.
+Validation is strict so contributors can add material without maintainers
+rewriting it.
 
 ## Required statuses
 

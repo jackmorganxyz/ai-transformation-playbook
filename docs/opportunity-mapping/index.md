@@ -1,20 +1,19 @@
 ---
 title: Opportunity Mapping
-description: Discover workflow clusters and turn them into a scoreable task inventory.
+description: Turn one workflow into a task list that can be scored.
 ---
 
 # Opportunity Mapping
 
-Opportunity mapping turns a vague "AI could help here" intuition into a list of
-specific tasks with owners, triggers, systems, and outputs.
+Turn vague interest into a concrete task list.
 
-## Mapping rules
+## Do this
 
 - Map tasks at the level where an operator would recognize the work.
 - Separate triggers from downstream steps.
 - Keep relationship-heavy tasks distinct from clerical preparation tasks.
 - Capture what system each step reads from and writes to.
 
-## Output in this section
+## Use this page
 
 - [Workflow discovery](workflow-discovery.md)

@@ -17,9 +17,9 @@ risks:
 
 ## Industry Context
 
-Product and engineering operations teams coordinate information between builders,
-support, leadership, and customers. Much of the work is structured, repetitive,
-and document-heavy.
+Product and engineering operations teams move information between builders,
+support, leadership, and customers. Much of the work is repetitive and
+document-heavy.
 
 ## Common Low-Value Task Clusters
 
@@ -51,7 +51,7 @@ and document-heavy.
 ## Scorecard Usage
 
 Documentation prep and follow-up extraction usually score well. Strategic
-prioritization, incident accountability, and customer commitments remain
+prioritization, incident accountability, and customer commitments stay
 human-led.
 
 ## Linked Example Specs

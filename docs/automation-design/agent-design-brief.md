@@ -1,11 +1,12 @@
 ---
 title: Agent Design Brief
-description: Reusable template for scoping the workflow, approvals, outputs, controls, and deployment mode of an agent.
+description: Template for scoping the workflow, approvals, outputs, controls, and deployment mode of an agent.
 ---
 
 # Agent Design Brief
 
 Use this brief for every example spec and every internal pilot.
+If you cannot fill a field, the workflow is not ready.
 
 ## Brief template
 

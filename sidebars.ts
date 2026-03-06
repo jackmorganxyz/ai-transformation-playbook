@@ -5,13 +5,13 @@ const sidebars: SidebarsConfig = {
     'index',
     {
       type: 'category',
-      label: 'Overview',
+      label: '1. Framework',
       link: {type: 'doc', id: 'overview/index'},
-      items: ['overview/framework-map', 'overview/pilot-rollout-governance'],
+      items: [],
     },
     {
       type: 'category',
-      label: 'Company Research',
+      label: '2. Research the Company',
       link: {type: 'doc', id: 'company-research/index'},
       items: [
         'company-research/company-research-brief',
@@ -20,13 +20,13 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: 'Opportunity Mapping',
+      label: '3. Map Workflows',
       link: {type: 'doc', id: 'opportunity-mapping/index'},
       items: ['opportunity-mapping/workflow-discovery'],
     },
     {
       type: 'category',
-      label: 'Task Scoring',
+      label: '4. Score Tasks',
       link: {type: 'doc', id: 'task-scoring/index'},
       items: [
         'task-scoring/canonical-task-rubric',
@@ -35,19 +35,51 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: 'Automation Design',
+      label: '5. Pick and Design the Pilot',
       link: {type: 'doc', id: 'automation-design/index'},
       items: [
         'automation-design/automation-prioritization',
         'automation-design/agent-design-brief',
-        'automation-design/pilot-rollout-measurement-governance',
       ],
     },
     {
       type: 'category',
-      label: 'Vertical Guides',
-      link: {type: 'doc', id: 'vertical-guides/index'},
+      label: '6. Review Constraints',
       items: [
+        {
+          type: 'doc',
+          id: 'security/index',
+          label: 'Security Review',
+        },
+        'security/security-review-checklist',
+        {
+          type: 'doc',
+          id: 'on-prem-local-deployment/index',
+          label: 'Deployment Choices',
+        },
+        'on-prem-local-deployment/local-first-deployment-checklist',
+        {
+          type: 'doc',
+          id: 'token-efficiency/index',
+          label: 'Token Cost',
+        },
+        'token-efficiency/token-budget-on-prem-decision-worksheet',
+      ],
+    },
+    {
+      type: 'doc',
+      id: 'automation-design/pilot-rollout-measurement-governance',
+      label: '7. Launch and Govern',
+    },
+    {
+      type: 'category',
+      label: 'Examples',
+      items: [
+        {
+          type: 'doc',
+          id: 'vertical-guides/index',
+          label: 'Role Guides',
+        },
         {
           type: 'category',
           label: 'Professional Services',
@@ -75,13 +107,11 @@ const sidebars: SidebarsConfig = {
             'vertical-guides/ecommerce/fulfillment-returns-operations',
           ],
         },
-      ],
-    },
-    {
-      type: 'category',
-      label: 'Agent Library',
-      link: {type: 'doc', id: 'agent-library/index'},
-      items: [
+        {
+          type: 'doc',
+          id: 'agent-library/index',
+          label: 'Agent Library',
+        },
         {
           type: 'category',
           label: 'Role Examples',
@@ -107,24 +137,6 @@ const sidebars: SidebarsConfig = {
           ],
         },
       ],
-    },
-    {
-      type: 'category',
-      label: 'Security',
-      link: {type: 'doc', id: 'security/index'},
-      items: ['security/security-review-checklist'],
-    },
-    {
-      type: 'category',
-      label: 'On-Prem/Local Deployment',
-      link: {type: 'doc', id: 'on-prem-local-deployment/index'},
-      items: ['on-prem-local-deployment/local-first-deployment-checklist'],
-    },
-    {
-      type: 'category',
-      label: 'Token Efficiency',
-      link: {type: 'doc', id: 'token-efficiency/index'},
-      items: ['token-efficiency/token-budget-on-prem-decision-worksheet'],
     },
     {
       type: 'category',

@@ -1,15 +1,21 @@
 ---
-title: Pilot Rollout, Measurement, And Governance
-description: The detailed rollout model for launching a pilot, measuring it, and deciding whether to expand it.
+title: Launch And Govern
+description: Launch the pilot in stages, measure it, and decide whether to expand it.
 ---
 
-# Pilot Rollout, Measurement, And Governance
+# Launch And Govern
 
-Design the rollout with the same care as the agent itself.
+Do not launch a pilot until the owner, approvals, rollback path, and pause rule
+are clear.
 
-## Measurement plan
+## Launch in stages
 
-Track three categories of signals:
+1. Shadow mode with no system write-back.
+2. Human-reviewed draft mode.
+3. Limited action mode.
+4. Expanded scope only after formal review.
+
+## Track three signal types
 
 - value: time saved, cycle-time change, error reduction, throughput, or revenue
   effect
@@ -17,16 +23,17 @@ Track three categories of signals:
 - control: security exceptions, auditability, rollback events, and unresolved
   failure modes
 
-## Launch stages
+## Required controls before launch
 
-1. Shadow mode with no system write-back.
-2. Human-reviewed draft mode.
-3. Limited write-back or action mode.
-4. Expanded scope only after formal review.
+- workflow owner
+- approval and escalation rules
+- rollback or fallback path
+- audit logs or review samples
+- threshold for pausing the pilot
 
-## Governance questions
+## Expand only if
 
-- Who can pause the pilot immediately?
-- What threshold forces rollback?
-- Who owns prompt, policy, and system changes?
-- What evidence is required before `reviewed` becomes `verified`?
+- users trust the review boundary
+- failures are recoverable
+- the measured value is material
+- the control model still holds under higher volume

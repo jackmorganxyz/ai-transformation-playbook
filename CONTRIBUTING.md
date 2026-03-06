@@ -1,11 +1,10 @@
 # Contributing
 
-The repo is designed for structured, reviewable content contributions.
+Use this repo for structured, reviewable content contributions.
 
-## Before you open an issue
+## Start here
 
-Use GitHub Discussions for ideation, vendor debates, and early proposals. Use
-GitHub Issues only for approved, actionable work.
+Read [docs/contributing/index.md](docs/contributing/index.md).
 
 ## Content types
 
@@ -21,7 +20,7 @@ Every submission must declare:
 - `assumptions`: explicit constraints or things the author had to infer
 - `risks`: the highest-risk failure cases or adoption gaps
 
-## Local workflow
+## Workflow
 
 1. Run `npm ci`.
 2. Copy the relevant file from `templates/contributions/`.

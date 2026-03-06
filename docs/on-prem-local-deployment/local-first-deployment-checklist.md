@@ -1,12 +1,11 @@
 ---
 title: Local-First Deployment Checklist
-description: A checklist for deciding whether a workflow should stay local, hybrid, or fully hosted.
+description: Checklist for deciding whether a workflow should stay local, hybrid, or hosted.
 ---
 
 # Local-First Deployment Checklist
 
-Use this checklist when a team is considering Mac Studio class hardware or other
-local-first deployment patterns.
+Use this when a team is considering local-first deployment.
 
 ## Decision prompts
 
@@ -18,5 +17,4 @@ local-first deployment patterns.
 
 ## Result
 
-If more than one box remains unchecked, default to `hybrid` or `hosted` until
-the operating model is clearer.
+If more than one box remains unchecked, default to `hybrid` or `hosted`.

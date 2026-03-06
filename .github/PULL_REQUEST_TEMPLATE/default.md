@@ -1,6 +1,6 @@
 ## Summary
 
-Describe the user-facing or contributor-facing change.
+State the change and why it matters.
 
 ## Checklist
 

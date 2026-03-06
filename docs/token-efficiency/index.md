@@ -1,21 +1,20 @@
 ---
-title: Token Efficiency
-description: Treat token cost as a design variable, not a cleanup task after launch.
+title: Token Cost
+description: Treat token cost as a design input, not a cleanup task after launch.
 ---
 
-# Token Efficiency
+# Token Cost
 
-Token efficiency matters because it changes the economics, latency, and
-deployment options of a workflow. It should be reviewed alongside quality and
-security, not after deployment.
+Token cost changes the economics, latency, and deployment options of a
+workflow. Review it before launch.
 
-## Design rules
+## Reduce cost in this order
 
 - reduce prompt scope before shopping for larger models
 - move stable instructions into reusable templates
 - prefer structured inputs over long free-text context
 - separate retrieval, drafting, and action steps when it reduces waste
 
-## Output in this section
+## Use this page
 
 - [Token budget and on-prem decision worksheet](token-budget-on-prem-decision-worksheet.md)

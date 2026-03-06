@@ -3,52 +3,41 @@
 }
 
 .hero {
-  padding: 5.5rem 0 3rem;
+  padding: 5rem 0 2.5rem;
 }
 
 .heroShell {
-  position: relative;
   display: grid;
   gap: 2rem;
-  grid-template-columns: minmax(0, 1.4fr) minmax(280px, 0.8fr);
+  grid-template-columns: minmax(0, 1.5fr) minmax(300px, 0.85fr);
   align-items: start;
 }
 
 .heroCopy {
   position: relative;
-  z-index: 1;
 }
 
 .eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  border: 1px solid rgba(10, 29, 49, 0.12);
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.76);
+  margin: 0;
   color: var(--playbook-muted);
-  font-size: 0.85rem;
+  font-size: 0.92rem;
   font-weight: 600;
-  letter-spacing: 0.06em;
-  padding: 0.5rem 0.85rem;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
 }
 
 .title {
-  margin: 1.25rem 0 1rem;
-  font-size: clamp(2.8rem, 7vw, 5.8rem);
-  line-height: 0.96;
-}
-
-.accent {
-  color: var(--playbook-accent);
+  margin: 0.9rem 0 1rem;
+  font-size: clamp(2.7rem, 7vw, 5.1rem);
+  line-height: 0.98;
+  max-width: 10ch;
 }
 
 .lede {
-  max-width: 48rem;
+  max-width: 38rem;
   color: var(--playbook-muted);
-  font-size: 1.12rem;
-  line-height: 1.7;
+  font-size: 1.08rem;
+  line-height: 1.65;
 }
 
 .actions {
@@ -71,24 +60,11 @@
 }
 
 .heroPanel {
-  position: relative;
   border: 1px solid rgba(10, 29, 49, 0.08);
   border-radius: 1.4rem;
-  background:
-    linear-gradient(155deg, rgba(255, 255, 255, 0.98), rgba(233, 243, 242, 0.82));
-  box-shadow: 0 30px 60px rgba(10, 29, 49, 0.12);
-  padding: 1.35rem;
-}
-
-.heroPanel::before {
-  position: absolute;
-  inset: -1.25rem auto auto -1.25rem;
-  width: 5rem;
-  height: 5rem;
-  border-radius: 1.4rem;
-  background: linear-gradient(135deg, rgba(217, 103, 59, 0.25), rgba(29, 122, 121, 0.3));
-  content: '';
-  filter: blur(6px);
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow: 0 18px 36px rgba(10, 29, 49, 0.08);
+  padding: 1.35rem 1.4rem;
 }
 
 .panelLabel {
@@ -104,50 +80,30 @@
   display: grid;
   gap: 0.8rem;
   margin: 0;
-  padding: 0;
-  list-style: none;
+  padding-left: 1.2rem;
 }
 
 .panelList li {
-  border: 1px solid rgba(10, 29, 49, 0.08);
-  border-radius: 1rem;
-  background: rgba(255, 255, 255, 0.84);
-  padding: 0.9rem 1rem;
+  padding-left: 0.2rem;
 }
 
-.panelList strong {
-  display: block;
+.panelList a {
+  display: inline-flex;
   margin-bottom: 0.25rem;
   font-size: 0.98rem;
+  font-weight: 700;
+  color: var(--playbook-ink);
 }
 
 .panelList span {
+  display: block;
   color: var(--playbook-muted);
   font-size: 0.95rem;
   line-height: 1.5;
 }
 
 .section {
-  padding: 1.5rem 0 3.5rem;
-}
-
-.sectionHeader {
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-  align-items: end;
-  margin-bottom: 1.25rem;
-}
-
-.sectionHeader h2 {
-  margin: 0;
-  font-size: clamp(1.7rem, 3vw, 2.4rem);
-}
-
-.sectionHeader p {
-  max-width: 40rem;
-  margin: 0;
-  color: var(--playbook-muted);
+  padding: 1rem 0 3.5rem;
 }
 
 .grid {
@@ -156,90 +112,34 @@
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
-.card,
-.metric,
-.pathway {
+.card {
   border: 1px solid rgba(10, 29, 49, 0.08);
   border-radius: 1.2rem;
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(245, 240, 231, 0.88));
-  box-shadow: 0 18px 36px rgba(10, 29, 49, 0.08);
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 14px 28px rgba(10, 29, 49, 0.06);
   padding: 1.2rem;
 }
 
-.card h3,
-.pathway h3,
-.metric strong {
+.card h2 {
   margin: 0 0 0.55rem;
+  font-size: 1.25rem;
 }
 
-.card p,
-.pathway p {
-  margin: 0;
+.card p {
+  margin: 0 0 0.9rem;
   color: var(--playbook-muted);
-  line-height: 1.65;
+  line-height: 1.6;
 }
 
-.metric {
-  display: grid;
-  gap: 0.35rem;
-}
-
-.metric strong {
-  font-size: 2rem;
-  line-height: 1;
-}
-
-.metric span {
-  color: var(--playbook-muted);
-}
-
-.pathways {
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-
-.pathway a {
-  display: inline-flex;
-  margin-top: 0.85rem;
+.card a {
   color: var(--playbook-teal);
   font-weight: 700;
 }
 
-.backgroundOrbA,
-.backgroundOrbB {
-  position: absolute;
-  border-radius: 999px;
-  filter: blur(10px);
-  pointer-events: none;
-}
-
-.backgroundOrbA {
-  top: -2rem;
-  right: 20%;
-  width: 14rem;
-  height: 14rem;
-  background: rgba(217, 103, 59, 0.18);
-}
-
-.backgroundOrbB {
-  bottom: 1rem;
-  left: -4rem;
-  width: 12rem;
-  height: 12rem;
-  background: rgba(29, 122, 121, 0.2);
-}
-
 @media screen and (max-width: 996px) {
   .heroShell,
-  .grid,
-  .pathways {
+  .grid {
     grid-template-columns: 1fr;
-  }
-
-  .sectionHeader {
-    display: grid;
   }
 
   .hero {
@@ -248,14 +148,10 @@
 }
 
 [data-theme='dark'] .eyebrow,
-[data-theme='dark'] .panelList li,
 [data-theme='dark'] .card,
-[data-theme='dark'] .metric,
-[data-theme='dark'] .pathway,
 [data-theme='dark'] .heroPanel {
   border-color: rgba(246, 241, 233, 0.08);
-  background:
-    linear-gradient(180deg, rgba(20, 32, 45, 0.96), rgba(18, 28, 39, 0.88));
+  background: rgba(20, 32, 45, 0.94);
   box-shadow: none;
 }
 
@@ -266,10 +162,7 @@
 
 [data-theme='dark'] .panelList span,
 [data-theme='dark'] .card p,
-[data-theme='dark'] .pathway p,
-[data-theme='dark'] .metric span,
 [data-theme='dark'] .lede,
-[data-theme='dark'] .sectionHeader p,
 [data-theme='dark'] .eyebrow {
   color: var(--playbook-muted);
 }

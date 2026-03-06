@@ -9,8 +9,7 @@ const isUserSite = repoName === `${repoOwner}.github.io`;
 
 const config: Config = {
   title: 'AI Transformation Playbook',
-  tagline:
-    'Vendor-neutral guidance for scoring work, designing agents, and shipping governed pilots.',
+  tagline: 'Research workflows. Score tasks. Launch controlled AI pilots.',
   favicon: 'img/favicon.ico',
   future: {
     v4: true,
@@ -58,9 +57,9 @@ const config: Config = {
         src: 'img/logo.svg',
       },
       items: [
-        {to: '/docs', label: 'Playbook', position: 'left'},
-        {to: '/docs/agent-library', label: 'Agent Library', position: 'left'},
-        {to: '/docs/contributing', label: 'Contributing', position: 'left'},
+        {to: '/docs', label: 'Start', position: 'left'},
+        {to: '/docs/agent-library', label: 'Examples', position: 'left'},
+        {to: '/docs/contributing', label: 'Contribute', position: 'left'},
         {
           href: repoUrl,
           label: 'GitHub',
@@ -72,41 +71,41 @@ const config: Config = {
       style: 'dark',
       links: [
         {
-          title: 'Playbook',
+          title: 'Start',
           items: [
             {
               label: 'Start here',
               to: '/docs',
             },
             {
-              label: 'Task scoring',
-              to: '/docs/task-scoring',
+              label: 'Framework',
+              to: '/docs/overview',
             },
           ],
         },
         {
-          title: 'Library',
+          title: 'Tools',
           items: [
             {
-              label: 'Role examples',
-              to: '/docs/agent-library',
+              label: 'Scoring worksheet',
+              to: '/docs/task-scoring/task-inventory-scoring-worksheet',
             },
             {
-              label: 'Vertical guides',
+              label: 'Security checklist',
+              to: '/docs/security/security-review-checklist',
+            },
+          ],
+        },
+        {
+          title: 'Examples',
+          items: [
+            {
+              label: 'Role guides',
               to: '/docs/vertical-guides',
             },
-          ],
-        },
-        {
-          title: 'Contribute',
-          items: [
             {
-              label: 'Contribution guide',
-              to: '/docs/contributing',
-            },
-            {
-              label: 'GitHub',
-              href: repoUrl,
+              label: 'Agent library',
+              to: '/docs/agent-library',
             },
           ],
         },

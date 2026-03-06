@@ -1,11 +1,11 @@
 ---
 title: Contribution Templates
-description: The source templates contributors should copy before adding a new example, guide, or reference pattern.
+description: The source templates to copy before adding a new example, guide, or reference pattern.
 ---
 
 # Contribution Templates
 
-Copy one of the source templates below into the matching docs directory.
+Copy one of these templates into the matching docs directory.
 
 ## Template paths
 
@@ -13,8 +13,7 @@ Copy one of the source templates below into the matching docs directory.
 - `templates/contributions/vertical-role-guide-template.md`
 - `templates/contributions/reference-pattern-template.mdx`
 
-## Why source templates exist
+## Use a template because
 
-The GitHub PR templates help reviewers. The source templates help contributors
-start with the exact headings, frontmatter keys, and metadata blocks required by
-CI.
+- CI checks the headings and frontmatter
+- the template already matches the required schema

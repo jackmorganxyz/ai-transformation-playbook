@@ -1,6 +1,6 @@
 ---
-title: Template: Vertical or role guide
-description: Copy this template into docs/vertical-guides/<vertical>/ and replace every placeholder.
+title: "Template: Vertical or role guide"
+description: Copy this into docs/vertical-guides/<vertical>/ and replace every placeholder.
 content_type: role-guide
 review_status: draft
 vertical: Replace with one vertical
@@ -15,7 +15,7 @@ risks:
 
 ## Industry Context
 
-Describe the operating environment, workflow cadence, and constraints.
+Describe the operating environment in one short paragraph.
 
 ## Common Low-Value Task Clusters
 
@@ -37,7 +37,7 @@ Describe the operating environment, workflow cadence, and constraints.
 
 ## Scorecard Usage
 
-Explain how to apply the canonical task rubric for this role.
+Explain how to separate automatable prep work from human judgment.
 
 ## Linked Example Specs
 

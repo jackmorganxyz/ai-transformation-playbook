@@ -12,7 +12,7 @@ body:
     id: summary
     attributes:
       label: Outcome
-      description: What should change if this issue is completed?
+      description: What should exist when this issue is done?
       placeholder: Publish a new SaaS customer support example spec
     validations:
       required: true
@@ -28,7 +28,7 @@ body:
     id: scope
     attributes:
       label: Scope boundaries
-      description: What is explicitly in scope and out of scope?
+      description: What is in scope and out of scope?
     validations:
       required: true
   - type: textarea

@@ -1,11 +1,11 @@
 ---
 title: Company Assessment Worksheet
-description: Reusable worksheet for collecting business, workflow, system, and constraint context.
+description: Worksheet for collecting business, workflow, system, and constraint context.
 ---
 
 # Company Assessment Worksheet
 
-Copy this worksheet into a project brief, PR, or client working session.
+Copy this into a brief, issue, or workshop doc.
 
 ## Business snapshot
 

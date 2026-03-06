@@ -17,9 +17,8 @@ risks:
 
 ## Industry Context
 
-Support teams handle high-volume, repeatable tasks with clear triggers, but the
-cost of a wrong answer can still be high if billing, security, or outage
-communication is involved.
+Support teams handle high-volume work with clear triggers. The main risk is a
+wrong answer in billing, security, or outage cases.
 
 ## Common Low-Value Task Clusters
 
@@ -50,9 +49,9 @@ communication is involved.
 
 ## Scorecard Usage
 
-Classification and summary work usually score high on automation fit. Customer
-communication often lands in `agent-assist` until evidence shows the draft
-quality and escalation logic are consistently safe.
+Classification and summary work often score high on automation fit. Customer
+communication usually stays in `agent-assist` until the review boundary proves
+safe.
 
 ## Linked Example Specs
 

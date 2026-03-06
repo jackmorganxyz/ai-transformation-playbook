@@ -18,33 +18,86 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    outputs:
+      should_deploy: ${{ steps.decision.outputs.should_deploy }}
 
     steps:
       - name: Checkout
         uses: actions/checkout@v5
 
+      - name: Check Pages status
+        id: pages
+        uses: actions/github-script@v7
+        with:
+          script: |
+            try {
+              const response = await github.rest.repos.getPages({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+              });
+
+              core.info(`Pages is enabled with status: ${response.data.status}`);
+              core.setOutput('enabled', 'true');
+            } catch (error) {
+              if (error.status === 404) {
+                core.notice(
+                  'GitHub Pages is not enabled for this repository yet. ' +
+                    'The deploy workflow will skip unless a PAGES_BOOTSTRAP_TOKEN secret is available.',
+                );
+                core.setOutput('enabled', 'false');
+                return;
+              }
+
+              throw error;
+            }
+
+      - name: Decide whether to deploy
+        id: decision
+        run: echo "should_deploy=${{ steps.pages.outputs.enabled == 'true' || secrets.PAGES_BOOTSTRAP_TOKEN != '' }}" >> "$GITHUB_OUTPUT"
+
+      - name: Configure Pages
+        if: ${{ steps.pages.outputs.enabled == 'true' }}
+        uses: actions/configure-pages@v5
+
+      - name: Enable and configure Pages
+        if: ${{ steps.pages.outputs.enabled != 'true' && secrets.PAGES_BOOTSTRAP_TOKEN != '' }}
+        uses: actions/configure-pages@v5
+        with:
+          enablement: true
+          token: ${{ secrets.PAGES_BOOTSTRAP_TOKEN }}
+
+      - name: Skip deploy until Pages is enabled
+        if: ${{ steps.decision.outputs.should_deploy != 'true' }}
+        run: |
+          echo "GitHub Pages is not enabled for this repository."
+          echo "To enable automatic bootstrap, add a PAGES_BOOTSTRAP_TOKEN secret with repo or Pages write access."
+          echo "Otherwise enable Pages once in repository settings and re-run this workflow."
+
       - name: Setup Node.js
+        if: ${{ steps.decision.outputs.should_deploy == 'true' }}
         uses: actions/setup-node@v6
         with:
           node-version: 22
           cache: npm
 
-      - name: Configure Pages
-        uses: actions/configure-pages@v5
-
       - name: Install dependencies
+        if: ${{ steps.decision.outputs.should_deploy == 'true' }}
         run: npm ci
 
       - name: Lint markdown
+        if: ${{ steps.decision.outputs.should_deploy == 'true' }}
         run: npm run lint:md
 
       - name: Validate content contracts
+        if: ${{ steps.decision.outputs.should_deploy == 'true' }}
         run: npm run validate:content
 
       - name: Build site
+        if: ${{ steps.decision.outputs.should_deploy == 'true' }}
         run: npm run build
 
       - name: Upload Pages artifact
+        if: ${{ steps.decision.outputs.should_deploy == 'true' }}
         uses: actions/upload-pages-artifact@v4
         with:
           path: build
@@ -54,6 +107,7 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     needs: build
+    if: ${{ needs.build.outputs.should_deploy == 'true' }}
     runs-on: ubuntu-latest
 
     steps:

@@ -1,16 +1,19 @@
 # AI Transformation Playbook
 
-AI Transformation Playbook is a repo-first, Docusaurus-based documentation
-project for teams and consultants designing practical AI adoption programs.
+AI Transformation Playbook is a docs-first manual for researching workflows,
+scoring tasks, and launching controlled AI pilots.
 
-The v1 scope focuses on:
+## Start
 
-- a vendor-neutral transformation framework
-- a canonical 1-5 task scoring system
-- reusable worksheets and decision templates
-- seed vertical guides across professional services, SaaS, and ecommerce
-- a design-spec-first agent library with human review, security, and token-cost
-  notes on every example
+Open [docs/index.md](docs/index.md). The repo follows this path:
+
+1. understand the framework
+2. research the company
+3. map workflows
+4. score tasks
+5. pick and design the pilot
+6. review security and deployment constraints
+7. launch with governance
 
 ## Stack
 
@@ -37,10 +40,10 @@ checks, and the Docusaurus production build.
 
 ## Repo structure
 
-- `docs/`: public documentation and example specs
-- `templates/contributions/`: copyable source templates for new submissions
-- `scripts/validate-content.mjs`: content schema and heading validation
-- `.github/workflows/`: CI and GitHub Pages publishing
+- `docs/`: the playbook, worksheets, role guides, and agent specs
+- `templates/contributions/`: schema-safe templates for new content
+- `scripts/validate-content.mjs`: frontmatter and heading validation
+- `.github/`: CI, issue templates, and PR templates
 
 ## Licensing
 

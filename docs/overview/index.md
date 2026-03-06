@@ -1,39 +1,33 @@
 ---
-title: Overview
-description: The playbook's transformation model, operating principles, and output stack.
+title: Framework
+description: The sequence, decisions, and ground rules behind the playbook.
 ---
 
-# Overview
+# Framework
 
-The playbook is built around a simple sequence:
+This playbook moves one workflow from rough idea to controlled pilot.
 
-1. Understand the business and workflow context.
-2. Inventory the work and score it consistently.
-3. Choose the right automation posture for each task.
-4. Design agents around approvals, reversibility, and controls.
-5. Roll out narrow pilots with measurement and governance.
+## Sequence
 
-## What the framework optimizes for
-
-- decisions that can survive scrutiny from operators, security reviewers, and
-  leadership
-- reusable documentation instead of one-off workshop artifacts
-- vendor-neutral guidance in the core playbook, with named tools only in
-  examples or reference patterns
-- a contribution model where outside contributors can add value without
-  maintainers having to rewrite the content from scratch
-
-## Core outputs
-
-| Phase | Primary output | Main decision |
+| Step | Output | Main decision |
 | --- | --- | --- |
-| Company research | Research brief and assessment worksheet | Where the business value and constraints sit |
-| Opportunity mapping | Workflow map and task inventory | Which work clusters are worth scoring |
-| Task scoring | Task scorecard | Which automation posture fits each task |
-| Automation design | Agent design brief | What the target workflow and approval model should be |
-| Pilot rollout | Pilot plan and governance loop | Whether the pilot is safe and valuable enough to expand |
+| Research the company | Brief and assessment worksheet | Where the business value and hard constraints sit |
+| Map workflows | Task inventory | Which work is specific enough to score |
+| Score tasks | Task rubric and worksheet | Which posture fits each task |
+| Pick the pilot | Prioritized candidate | Which workflow is the right first release |
+| Design the pilot | Design brief | What the workflow, inputs, approvals, and outputs should be |
+| Launch and govern | Rollout plan | Whether the pilot is safe and useful enough to expand |
 
-## Read this next
+## Use it well
 
-- [Framework map](framework-map.md)
-- [Pilot rollout and governance](pilot-rollout-governance.md)
+- Score tasks only after the owner, trigger, and output are clear.
+- Separate prep work from judgment, relationship, and approval work.
+- Do not launch without rollback, logging, and a clear workflow owner.
+- Keep examples grounded in real workflows, not generic capability demos.
+
+## What this playbook optimizes for
+
+- fast comprehension for first-time readers
+- reusable documents instead of workshop-only artifacts
+- vendor-neutral guidance in the core framework
+- explicit review boundaries before anything touches live work

@@ -1,45 +1,48 @@
 ---
 slug: /
 title: Start Here
-description: How to use the AI Transformation Playbook from company research through governed pilot rollout.
+description: What this playbook is, how to use it, and where to find the next step.
 ---
 
 # Start Here
 
-AI Transformation Playbook is a repo-first guide for evaluating where AI fits,
-how much automation is responsible, and what an acceptable agent design spec
-looks like before anybody ships code.
+AI Transformation Playbook is a docs-first manual for choosing and launching
+practical AI work.
 
-## What v1 includes
+Use it to:
 
-- five core framework chapters that move from company research to governed
-  pilot rollout
-- one canonical 1-5 task rubric that yields both Human Value Score and
-  Automation Fit Score
-- reusable worksheets for assessment, scoring, security review, and token or
-  on-prem decisions
-- nine role guides across professional services, SaaS, and ecommerce
-- twelve design-spec examples, including three cross-industry reference
-  patterns
+- research the company
+- map one workflow into real tasks
+- score each task with one rubric
+- choose a pilot that is small and defensible
+- design approvals, security, deployment, and rollout before code
 
-## How to use the site
+## Start in this order
 
-1. Start in [Overview](overview/index.md) to understand the framework and the
-   operating rules.
-2. Move through [Company Research](company-research/index.md),
-   [Opportunity Mapping](opportunity-mapping/index.md), and
-   [Task Scoring](task-scoring/index.md) to identify and rank candidate work.
-3. Use [Automation Design](automation-design/index.md) to design the target
-   workflow, human approvals, and rollout plan.
-4. Use [Vertical Guides](vertical-guides/index.md) and
-   [Agent Library](agent-library/index.md) to adapt the framework to a real
-   role.
+1. [Understand the framework](overview/index.md)
+2. [Research the company](company-research/index.md)
+3. [Map workflows](opportunity-mapping/index.md)
+4. [Score tasks](task-scoring/index.md)
+5. [Pick and design the pilot](automation-design/index.md)
+6. [Review security](security/index.md)
+7. [Review deployment and token cost](on-prem-local-deployment/index.md)
+8. [Launch and govern](automation-design/pilot-rollout-measurement-governance.md)
 
-## Operating principles
+## Need something specific?
 
+- Examples: [Role guides](vertical-guides/index.md) and
+  [agent specs](agent-library/index.md)
+- Templates: [Contribution templates](contributing/contribution-templates.md)
+- Decision tools:
+  [assessment worksheet](company-research/company-assessment-worksheet.md),
+  [scoring worksheet](task-scoring/task-inventory-scoring-worksheet.md),
+  [security checklist](security/security-review-checklist.md),
+  [deployment checklist](on-prem-local-deployment/local-first-deployment-checklist.md),
+  [token worksheet](token-efficiency/token-budget-on-prem-decision-worksheet.md)
+
+## Ground rules
+
+- Start with a workflow, not a model.
+- Keep approval points explicit.
+- Treat security, deployment, and rollback as design inputs.
 - Keep the core framework vendor-neutral.
-- Tie every example back to a real workflow, not a generic capability demo.
-- Make human approval boundaries explicit.
-- Treat security, local deployment, and token cost as first-class design
-  constraints.
-- Use GitHub Discussions for ideation and GitHub Issues only for approved work.

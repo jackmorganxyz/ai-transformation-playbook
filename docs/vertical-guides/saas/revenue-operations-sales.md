@@ -18,8 +18,7 @@ risks:
 ## Industry Context
 
 Revenue teams lose time on CRM hygiene, post-meeting updates, and next-step
-tracking. Those tasks are structured enough to support automation, but deal
-strategy still requires human judgment.
+tracking. The prep work is structured. Deal strategy is not.
 
 ## Common Low-Value Task Clusters
 
@@ -50,9 +49,8 @@ strategy still requires human judgment.
 
 ## Scorecard Usage
 
-Post-call normalization and hygiene tasks often land in `partial automation`.
-Forecasting, pricing judgment, and deal negotiation usually stay human-led or
-agent-assisted.
+Post-call normalization and hygiene often fit `partial automation`.
+Forecasting, pricing, and negotiation stay human-led or agent-assisted.
 
 ## Linked Example Specs
 

@@ -1,14 +1,13 @@
 ---
-title: Security
-description: Security and control guidance for evaluating AI workflows without turning the playbook into a stack-specific runbook.
+title: Security Review
+description: Review the data, access, controls, and rollback model before launch.
 ---
 
-# Security
+# Security Review
 
-V1 stays at the checklist and design-pattern level. The objective is to force
-security review into the design phase rather than bolt it on at the end.
+Security review belongs in the design phase, not after launch.
 
-## Minimum security posture
+## Review these points
 
 - classify the data touched by the workflow
 - define which systems can be read from and written to
@@ -16,6 +15,6 @@ security review into the design phase rather than bolt it on at the end.
 - define the approval boundary for any external action
 - define rollback or containment steps for unsafe outputs
 
-## Output in this section
+## Use this page
 
 - [Security review checklist](security-review-checklist.md)

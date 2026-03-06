@@ -1,16 +1,21 @@
 ---
-title: Automation Design
-description: Turn scored opportunities into implementation-ready design briefs with explicit human approvals.
+title: Pick And Design The Pilot
+description: Choose one pilot and turn it into an implementation-ready design brief.
 ---
 
-# Automation Design
+# Pick And Design The Pilot
 
-Automation design starts after scoring, not before. The goal is to turn a
-workflow opportunity into a design spec that someone can review without filling
-in the hard parts from memory.
+Start with one candidate. Keep the scope narrow.
 
-## Outputs in this section
+## Do this
 
-- [Automation prioritization](automation-prioritization.md)
+1. Pick the best first pilot, not just the highest score.
+2. Write the workflow, approvals, outputs, and controls into one brief.
+3. Review security, deployment, and token cost before launch.
+4. Launch in stages with rollback and governance.
+
+## Use these pages
+
+- [Pick the pilot](automation-prioritization.md)
 - [Agent design brief](agent-design-brief.md)
-- [Pilot rollout, measurement, and governance](pilot-rollout-measurement-governance.md)
+- [Launch and govern](pilot-rollout-measurement-governance.md)

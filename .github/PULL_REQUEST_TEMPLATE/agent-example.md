@@ -12,4 +12,4 @@ Which real workflow is this spec based on, and who owns it?
 - [ ] Security notes are explicit
 - [ ] Token-cost notes are explicit
 - [ ] Prompt skeleton is included
-- [ ] `npm run validate:content` passes
+- [ ] `npm run check` passes

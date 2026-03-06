@@ -17,9 +17,9 @@ risks:
 
 ## Industry Context
 
-Operations teams spend time resolving exceptions that originate in carrier
-feeds, warehouse systems, and return queues. Much of the effort is classification
-and routing before a human makes the final decision.
+Operations teams spend time resolving carrier, warehouse, and return
+exceptions. Much of the effort is classification and routing before a human
+acts.
 
 ## Common Low-Value Task Clusters
 
@@ -51,8 +51,8 @@ and routing before a human makes the final decision.
 ## Scorecard Usage
 
 Exception routing often scores high on automation fit when event data is
-structured. Direct financial actions or irreversible inventory changes should
-stay human-approved.
+structured. Financial actions and irreversible inventory changes stay
+human-approved.
 
 ## Linked Example Specs
 

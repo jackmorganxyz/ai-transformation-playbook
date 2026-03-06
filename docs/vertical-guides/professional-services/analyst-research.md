@@ -17,9 +17,8 @@ risks:
 
 ## Industry Context
 
-Analysts spend time collecting, sorting, and synthesizing information before it
-becomes client-facing insight. The manual burden is usually in monitoring and
-first-pass structuring.
+Analysts spend time collecting, sorting, and structuring information before it
+becomes client-facing insight. The drag is monitoring and first-pass synthesis.
 
 ## Common Low-Value Task Clusters
 
@@ -50,9 +49,8 @@ first-pass structuring.
 
 ## Scorecard Usage
 
-Monitoring and first-pass synthesis often have strong automation fit if source
-access is structured. Final interpretation and recommendation writing generally
-stay in `agent-assist`.
+Monitoring and first-pass synthesis often fit automation well when source
+access is structured. Final interpretation usually stays in `agent-assist`.
 
 ## Linked Example Specs
 

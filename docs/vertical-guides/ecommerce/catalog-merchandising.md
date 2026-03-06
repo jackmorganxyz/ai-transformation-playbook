@@ -17,9 +17,8 @@ risks:
 
 ## Industry Context
 
-Catalog teams translate raw supplier or internal product data into customer-ready
-product pages, attributes, and merchandising views. The repeatable burden is
-usually in cleanup and quality checks.
+Catalog teams turn raw product data into customer-ready attributes and product
+pages. The repeatable burden is cleanup and quality checks.
 
 ## Common Low-Value Task Clusters
 
@@ -50,8 +49,8 @@ usually in cleanup and quality checks.
 
 ## Scorecard Usage
 
-QA and normalization tasks often fit `partial automation` well. Customer-facing
-copy and promotional judgment usually stay in `agent-assist`.
+QA and normalization often fit `partial automation`. Customer-facing copy and
+promotional judgment usually stay in `agent-assist`.
 
 ## Linked Example Specs
 

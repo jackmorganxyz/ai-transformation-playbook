@@ -1,14 +1,13 @@
 ---
-title: Automation Prioritization
-description: Prioritize automation candidates using the scorecard plus implementation reality.
+title: Pick The Pilot
+description: Choose the best first pilot using the scorecard plus implementation reality.
 ---
 
-# Automation Prioritization
+# Pick The Pilot
 
-The highest scoring task is not always the best first pilot. Prioritize by
-combining scorecard output with implementation reality.
+The highest score is not always the best first pilot.
 
-## Prioritization filters
+## Choose a first pilot with these filters
 
 - measurable business impact in one quarter
 - clear workflow owner
@@ -22,7 +21,7 @@ combining scorecard output with implementation reality.
 - draft generation, triage, classification, and exception routing
 - workflows where the human can see and correct the output before it causes harm
 
-## Poor first pilots
+## Avoid these first
 
 - broad autonomous agents with unclear ownership
 - high-trust relationship steps with no review boundary

@@ -26,7 +26,7 @@ export default function ExampleSpecMeta() {
   const metadata = frontMatter as ExampleFrontMatter;
   const sections = [
     {
-      title: 'Human review',
+      title: 'Approvals',
       items: metadata.human_approval_points ?? [],
     },
     {
@@ -42,8 +42,8 @@ export default function ExampleSpecMeta() {
   return (
     <section className={styles.wrapper}>
       <div className={styles.chips}>
-        <span className={styles.chip}>Review status: {formatToken(metadata.review_status)}</span>
-        <span className={styles.chip}>Deployment mode: {formatToken(metadata.deployment_mode)}</span>
+        <span className={styles.chip}>Status: {formatToken(metadata.review_status)}</span>
+        <span className={styles.chip}>Deployment: {formatToken(metadata.deployment_mode)}</span>
       </div>
       <div className={styles.grid}>
         {sections.map((section) => (
