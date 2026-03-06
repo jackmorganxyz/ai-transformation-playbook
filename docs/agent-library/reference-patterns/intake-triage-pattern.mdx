@@ -1,0 +1,144 @@
+---
+title: Intake Triage Pattern
+description: Cross-industry pattern for classifying inbound work, routing it, and preparing a human-ready summary.
+content_type: reference-pattern
+review_status: reviewed
+pattern_scope: Inbound intake, classification, and routing
+applicable_industries:
+  - Professional services
+  - SaaS
+  - Ecommerce
+applicable_roles:
+  - Customer support
+  - Operations
+  - Account management
+problem_statement: Teams waste time normalizing inbound work before the right human can review or act on it.
+trigger: A new intake item enters an inbox, queue, or request form.
+inputs:
+  - Inbound message or form payload
+  - Current taxonomy or routing rules
+  - Account or workflow context
+systems_tools:
+  - Inbox, help desk, or intake form
+  - Routing taxonomy
+  - System-of-record lookup
+human_approval_points:
+  - Low-confidence routes are reviewed before action.
+  - Customer-impacting or financially meaningful actions stay human-approved.
+outputs:
+  - Classified intake record
+  - Routed summary
+  - Recommended next action
+success_metrics:
+  - Faster routing
+  - Better queue accuracy
+  - Reduced manual triage time
+failure_modes:
+  - Taxonomy drift causes bad routing
+  - Ambiguous inputs are classified too confidently
+  - Sensitive cases are mishandled
+security_notes:
+  - Restrict context retrieval to approved systems.
+  - Preserve auditability on routed actions.
+token_cost_notes:
+  - Use structured payload fields before long-text context.
+  - Separate classification from downstream drafting where possible.
+deployment_mode: hybrid
+assumptions:
+  - There is a maintained taxonomy or queue structure.
+risks:
+  - Teams may over-expand this pattern into autonomous action without adding review gates.
+---
+
+import ExampleSpecMeta from '@site/src/components/ExampleSpecMeta';
+
+<ExampleSpecMeta />
+
+## Problem Statement
+
+Inbound work often arrives faster than humans can classify it, but that does not
+mean the right answer is immediate automation beyond routing and preparation.
+
+## Pattern Fit
+
+Use this when the intake item can be classified against a maintained taxonomy
+and when a human still owns the downstream action. Avoid it when the taxonomy is
+unstable or the first action is irreversible.
+
+## Trigger
+
+A new item lands in the intake queue or the item changes enough to require
+re-triage.
+
+## Inputs
+
+- inbound payload
+- routing rules
+- lookup context
+
+## Systems/Tools
+
+- intake system
+- routing taxonomy
+- context lookup systems
+
+## Workflow Steps
+
+1. Normalize the intake payload into structured fields.
+2. Classify the issue against the current taxonomy.
+3. Retrieve the smallest useful context set.
+4. Draft a routed summary and recommended next step.
+
+## Human Approval Points
+
+- Humans review low-confidence or sensitive cases.
+- Financial, legal, or customer-commitment actions remain human-approved.
+
+## Outputs
+
+- classification label
+- routed summary
+- next-step recommendation
+
+## Success Metrics
+
+- lower manual triage time
+- higher queue accuracy
+- faster first-touch handling
+
+## Failure Modes
+
+- taxonomy drift
+- overconfident routing
+- sensitive exceptions hidden in generic intake text
+
+## Security Notes
+
+- keep context retrieval scoped to the relevant record
+- retain approval history for downstream actions
+
+## Token-Cost Notes
+
+- favor structured fields and top excerpts over full threads
+- stage long-text summarization only after classification
+
+## Deployment Mode
+
+`Hybrid` is usually the safest default because the pattern is best at preparing
+work, not at fully closing it.
+
+## Prompt Skeleton
+
+```text
+Role: Intake triage assistant
+
+Objective: Classify one intake item and prepare a routed summary.
+
+Inputs: Intake payload, taxonomy rules, relevant account or workflow context.
+
+Constraints: Flag low confidence, avoid irreversible actions, and keep rationale visible.
+
+Required checks: Escalate policy-sensitive or ambiguous cases.
+
+Output format: Classification, route, summary, confidence notes, review flags.
+```

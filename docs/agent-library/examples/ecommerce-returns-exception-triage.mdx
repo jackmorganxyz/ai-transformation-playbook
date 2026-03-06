@@ -1,0 +1,130 @@
+---
+title: Returns Exception Triage Agent
+description: Design spec for classifying returns issues and preparing policy-backed support summaries.
+content_type: agent-example
+review_status: reviewed
+industry: Ecommerce
+target_role: Customer support
+problem_statement: Support agents spend too much time gathering order context and policy state before they can route returns and refund exceptions correctly.
+trigger: A return or refund-related ticket arrives.
+inputs:
+  - Order details
+  - Return policy and status
+  - Customer issue summary
+systems_tools:
+  - Help desk
+  - Commerce platform
+  - Return management system
+human_approval_points:
+  - Agent reviews any refund or goodwill recommendation.
+  - Fraud or policy exception cases are escalated explicitly.
+outputs:
+  - Returns issue classification
+  - Policy-backed case summary
+  - Recommended routing path
+success_metrics:
+  - Time to classify return exceptions
+  - Correct routing rate
+  - Reduction in manual order lookup time
+failure_modes:
+  - Wrong policy path is applied
+  - Order context is incomplete
+  - Sensitive fraud indicators are missed
+security_notes:
+  - Payment and customer data remain in approved systems only.
+  - Do not execute refunds automatically.
+token_cost_notes:
+  - Prefer structured order and return fields over full thread history.
+  - Pull only the relevant policy excerpt for the issue type.
+deployment_mode: hybrid
+assumptions:
+  - Return and order systems expose enough structured data to classify most cases.
+risks:
+  - Policy exceptions can look routine and still require experienced human judgment.
+---
+
+import ExampleSpecMeta from '@site/src/components/ExampleSpecMeta';
+
+<ExampleSpecMeta />
+
+## Problem Statement
+
+Returns-related tickets require policy grounding, order facts, and routing
+logic, but most of the time cost is in gathering that context before action.
+
+## Trigger
+
+Run when a return, exchange, or refund issue is opened.
+
+## Inputs
+
+- order and shipment details
+- return status
+- customer message
+
+## Systems/Tools
+
+- help desk
+- commerce platform
+- returns system
+
+## Workflow Steps
+
+1. Pull order and return status for the relevant issue.
+2. Match the case against current policy rules.
+3. Draft a case summary and recommended queue or action.
+4. Flag exceptions for human review.
+
+## Human Approval Points
+
+- Agent approves every customer-facing outcome.
+- Refund or fraud exceptions are escalated.
+
+## Outputs
+
+- issue classification
+- case summary
+- recommended routing
+
+## Success Metrics
+
+- faster triage
+- correct routing
+- reduced lookup time
+
+## Failure Modes
+
+- wrong policy applied
+- incomplete order context
+- missed fraud signal
+
+## Security Notes
+
+- restrict access to order and payment systems
+- keep refund actions human-approved
+
+## Token-Cost Notes
+
+- use structured fields first
+- retrieve only the policy snippet needed for the current issue
+
+## Deployment Mode
+
+`Hybrid` is a fit because policy-backed preparation is automatable, but
+financial and customer-impacting actions remain explicitly reviewed.
+
+## Prompt Skeleton
+
+```text
+Role: Returns operations assistant
+
+Objective: Classify a returns issue and prepare a policy-backed summary for review.
+
+Inputs: Order data, return status, customer issue, applicable policy excerpt.
+
+Constraints: Flag fraud or policy exceptions, avoid refund execution, and keep uncertainty visible.
+
+Required checks: Highlight anything that requires supervisor or specialist review.
+
+Output format: Issue type, case summary, recommended route, required approvals.
+```

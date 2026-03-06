@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: GitHub Discussions
+    url: https://github.com/jackmorgan/ai-transformation-playbook/discussions
+    about: Use Discussions for ideation, vendor debates, and early-stage proposals before work is approved.

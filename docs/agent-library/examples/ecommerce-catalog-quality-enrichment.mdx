@@ -1,0 +1,130 @@
+---
+title: Catalog Quality And Enrichment Agent
+description: Design spec for checking product feeds, identifying gaps, and drafting reviewable attribute enrichment.
+content_type: agent-example
+review_status: reviewed
+industry: Ecommerce
+target_role: Catalog or merchandising
+problem_statement: Catalog teams spend too much time identifying missing fields, normalizing attributes, and drafting first-pass enrichment before product pages are reviewable.
+trigger: A new product batch arrives or a catalog QA cycle starts.
+inputs:
+  - Product feed data
+  - Taxonomy rules
+  - Merchandising guidelines
+systems_tools:
+  - Product information system
+  - Feed files
+  - Merchandising checklist
+human_approval_points:
+  - Merchandiser reviews all publish-facing enrichment.
+  - Regulated product claims are confirmed against source facts.
+outputs:
+  - Quality issue list
+  - Suggested attribute enrichment
+  - Publish-readiness summary
+success_metrics:
+  - Time to QA a product batch
+  - Fewer missing or malformed attributes
+  - Acceptance rate of enrichment suggestions
+failure_modes:
+  - Product facts are inferred incorrectly
+  - Taxonomy is applied inconsistently
+  - Generated copy drifts beyond approved claims
+security_notes:
+  - Keep supplier or internal product data in approved systems.
+  - Preserve source traceability for regulated claims.
+token_cost_notes:
+  - Use structured product specs instead of full raw feeds where possible.
+  - Separate attribute normalization from copy drafting.
+deployment_mode: hybrid
+assumptions:
+  - Taxonomy rules and core content guidelines are documented.
+risks:
+  - Weak source data can make enrichment appear cleaner while still being wrong.
+---
+
+import ExampleSpecMeta from '@site/src/components/ExampleSpecMeta';
+
+<ExampleSpecMeta />
+
+## Problem Statement
+
+Catalog quality work is repetitive and rules-based, but publishing mistakes can
+directly affect conversion and compliance.
+
+## Trigger
+
+Run when a new supplier feed or internal product batch enters QA.
+
+## Inputs
+
+- product attributes
+- taxonomy rules
+- merchandising standards
+
+## Systems/Tools
+
+- PIM
+- feed source
+- QA checklist
+
+## Workflow Steps
+
+1. Check products for missing, malformed, or conflicting fields.
+2. Suggest normalized attributes and enrichment candidates.
+3. Draft a publish-readiness summary with flagged issues.
+4. Send the package for merchandiser review.
+
+## Human Approval Points
+
+- Merchandiser approves any publish-facing changes.
+- Regulated claims are checked against source facts.
+
+## Outputs
+
+- QA issue list
+- enrichment suggestions
+- readiness summary
+
+## Success Metrics
+
+- faster QA cycles
+- fewer missing attributes
+- better acceptance of enrichment drafts
+
+## Failure Modes
+
+- wrong attribute inference
+- inconsistent taxonomy mapping
+- generated language exceeds policy
+
+## Security Notes
+
+- keep source data in approved product systems
+- retain traceability for all sensitive product claims
+
+## Token-Cost Notes
+
+- prefer structured specs to raw feed text
+- split validation and copy tasks to reduce waste
+
+## Deployment Mode
+
+`Hybrid` works because the machine can handle rule-heavy QA, while publishing
+decisions and final copy remain human-owned.
+
+## Prompt Skeleton
+
+```text
+Role: Catalog QA assistant
+
+Objective: Identify catalog quality issues and suggest reviewable enrichment.
+
+Inputs: Product specs, taxonomy rules, merchandising checklist.
+
+Constraints: Do not invent product facts. Flag any regulated or uncertain claim for review.
+
+Required checks: Separate missing data from inferred enrichment.
+
+Output format: Quality issues, suggested attributes, readiness summary, review flags.
+```

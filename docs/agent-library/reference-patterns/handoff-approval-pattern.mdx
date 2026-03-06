@@ -1,0 +1,144 @@
+---
+title: Handoff And Approval Pattern
+description: Cross-industry pattern for packaging work so a human can approve the next action quickly and safely.
+content_type: reference-pattern
+review_status: reviewed
+pattern_scope: Human review packaging for approvals and downstream hand-offs
+applicable_industries:
+  - Professional services
+  - SaaS
+  - Ecommerce
+applicable_roles:
+  - Delivery management
+  - Support
+  - Operations
+problem_statement: Teams lose time because the information needed for approval is scattered, incomplete, or inconsistently presented.
+trigger: A workflow reaches an approval point or a specialist hand-off.
+inputs:
+  - Current task state
+  - Relevant evidence and context
+  - Approval policy or decision rules
+systems_tools:
+  - Workflow system
+  - Notes or ticket history
+  - Approval checklist
+human_approval_points:
+  - The approver decides whether to accept, reject, or escalate the recommendation.
+  - Any write-back or customer-facing action waits for the approval decision.
+outputs:
+  - Review package
+  - Recommendation with rationale
+  - Missing-information flags
+success_metrics:
+  - Faster approval turnaround
+  - Better decision consistency
+  - Fewer approval cycles caused by missing context
+failure_modes:
+  - Key evidence is omitted
+  - Recommendation bias anchors the reviewer too strongly
+  - Approval criteria are outdated
+security_notes:
+  - Keep approval packages scoped to the approver's permissions.
+  - Retain decision and rationale history for audit.
+token_cost_notes:
+  - Summarize only the evidence relevant to the approval.
+  - Avoid passing full case history when a structured review package exists.
+deployment_mode: hybrid
+assumptions:
+  - The approval criteria are explicit enough to summarize.
+risks:
+  - Poorly designed summaries can bias reviewers or hide missing facts.
+---
+
+import ExampleSpecMeta from '@site/src/components/ExampleSpecMeta';
+
+<ExampleSpecMeta />
+
+## Problem Statement
+
+Approvals slow down when the approver has to reconstruct the case before they
+can decide. A good agent packages the case; it does not remove the approval.
+
+## Pattern Fit
+
+Use this when a workflow already has a defined approval step and the main issue
+is missing context. Avoid it when the approval criteria are informal or when the
+recommended action would be hard to reverse.
+
+## Trigger
+
+The workflow reaches a review gate or needs to move from one specialist to
+another.
+
+## Inputs
+
+- task state
+- supporting evidence
+- approval checklist
+
+## Systems/Tools
+
+- workflow tracker
+- notes or history store
+- approval template
+
+## Workflow Steps
+
+1. Gather the minimum evidence set needed for a decision.
+2. Summarize the current state, recommendation, and rationale.
+3. Flag missing information or low-confidence areas.
+4. Present the review package to the approver.
+
+## Human Approval Points
+
+- Approver accepts, rejects, or escalates the case.
+- Downstream actions wait for the decision.
+
+## Outputs
+
+- review package
+- recommendation
+- missing-info flags
+
+## Success Metrics
+
+- faster approvals
+- fewer repeat review cycles
+- more consistent approval decisions
+
+## Failure Modes
+
+- omitted evidence
+- recommendation anchoring
+- outdated approval rules
+
+## Security Notes
+
+- scope the package to the approver's access level
+- log the decision and rationale
+
+## Token-Cost Notes
+
+- summarize just the approval-relevant evidence
+- reuse a structured review template
+
+## Deployment Mode
+
+`Hybrid` is typically correct because the pattern exists to improve human review,
+not remove it.
+
+## Prompt Skeleton
+
+```text
+Role: Approval package assistant
+
+Objective: Prepare a concise review package for a human approver.
+
+Inputs: Current case state, supporting evidence, approval criteria.
+
+Constraints: Show rationale, surface missing information, and do not imply approval has already happened.
+
+Required checks: Flag anything that makes the recommendation low confidence or hard to reverse.
+
+Output format: Recommendation, rationale, evidence summary, missing info, decision options.
+```

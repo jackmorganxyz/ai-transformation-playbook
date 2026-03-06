@@ -1,0 +1,130 @@
+---
+title: Support Triage And Reply Draft Agent
+description: Design spec for classifying tickets, drafting policy-backed replies, and preparing escalation summaries.
+content_type: agent-example
+review_status: reviewed
+industry: SaaS
+target_role: Customer support
+problem_statement: Support teams lose time classifying tickets, gathering context, and drafting first responses before a specialist or frontline agent can act.
+trigger: A new ticket is created or updated.
+inputs:
+  - Ticket metadata and thread
+  - Knowledge base articles
+  - Account and product context
+systems_tools:
+  - Help desk
+  - Knowledge base
+  - CRM or account system
+human_approval_points:
+  - Agents review all outbound drafts before sending.
+  - Billing, security, and account-access issues are explicitly escalated.
+outputs:
+  - Ticket classification
+  - Draft reply
+  - Escalation summary if needed
+success_metrics:
+  - First-response handling time
+  - Correct routing rate
+  - Draft acceptance rate
+failure_modes:
+  - Wrong policy or article is cited
+  - Urgent tickets are under-triaged
+  - Draft tone is misaligned for sensitive cases
+security_notes:
+  - Keep customer data within approved support systems.
+  - Never auto-send replies for sensitive issue classes.
+token_cost_notes:
+  - Pass only the relevant thread window and linked article snippets.
+  - Skip long retrieval for simple routing-only tickets.
+deployment_mode: hybrid
+assumptions:
+  - Knowledge base quality is high enough to support grounded drafts.
+risks:
+  - Poor taxonomy or stale help articles can make drafts confidently wrong.
+---
+
+import ExampleSpecMeta from '@site/src/components/ExampleSpecMeta';
+
+<ExampleSpecMeta />
+
+## Problem Statement
+
+Support teams need faster triage and draft generation without turning sensitive
+customer issues into auto-pilot workflows.
+
+## Trigger
+
+Run on ticket creation, major ticket updates, or escalation requests.
+
+## Inputs
+
+- ticket text and metadata
+- related account context
+- approved support content
+
+## Systems/Tools
+
+- help desk
+- knowledge base
+- CRM
+
+## Workflow Steps
+
+1. Classify the ticket by intent, urgency, and policy sensitivity.
+2. Retrieve the smallest set of relevant support content.
+3. Draft a reply or an escalation summary.
+4. Flag routing and confidence for the human reviewer.
+
+## Human Approval Points
+
+- Support agent approves the reply draft.
+- Sensitive classes are routed to the right specialist queue.
+
+## Outputs
+
+- triage label
+- reply draft
+- escalation summary
+
+## Success Metrics
+
+- faster first response
+- accurate routing
+- reduced manual summarization time
+
+## Failure Modes
+
+- unsafe reply for a sensitive issue
+- missed urgency on outage or access cases
+- overlong context inflates cost with little quality gain
+
+## Security Notes
+
+- keep all customer information inside approved systems
+- preserve escalation traces for audited issue classes
+
+## Token-Cost Notes
+
+- restrict retrieval to the active issue and top matching articles
+- avoid sending full ticket history when a concise summary exists
+
+## Deployment Mode
+
+`Hybrid` is the default because quality is useful at draft time, but the
+customer-facing step stays under agent review.
+
+## Prompt Skeleton
+
+```text
+Role: Support triage assistant
+
+Objective: Classify the ticket and draft a grounded reply or escalation summary.
+
+Inputs: Ticket thread, metadata, account context, approved support content.
+
+Constraints: Escalate sensitive classes, cite support content, and avoid promises not present in policy.
+
+Required checks: Mark any case that needs specialist review before response.
+
+Output format: Intent, urgency, recommended queue, draft reply, escalation summary.
+```

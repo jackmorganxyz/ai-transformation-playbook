@@ -1,0 +1,130 @@
+---
+title: Release Follow-Through Agent
+description: Design spec for turning engineering updates into reviewable release summaries and follow-up tasks.
+content_type: agent-example
+review_status: reviewed
+industry: SaaS
+target_role: Product or engineering operations
+problem_statement: Product and engineering operations teams spend time collecting change notes, extracting follow-ups, and drafting release summaries across systems.
+trigger: A release window closes or a weekly product operations review starts.
+inputs:
+  - Ticket and changelog deltas
+  - Meeting or incident notes
+  - Release template
+systems_tools:
+  - Issue tracker
+  - Docs or notes workspace
+  - Release planning sheet
+human_approval_points:
+  - Product or engineering owner reviews customer-facing language.
+  - Technical accuracy is confirmed before external publication.
+outputs:
+  - Draft release summary
+  - Follow-up tasks by owner
+  - Items needing clarification
+success_metrics:
+  - Release-note prep time
+  - Accuracy of follow-up extraction
+  - Reduction in missed cross-team actions
+failure_modes:
+  - Technical nuance is flattened
+  - Unreleased work is included accidentally
+  - Incident language is too confident
+security_notes:
+  - Keep internal issue context inside approved tooling.
+  - Separate internal notes from customer-facing output.
+token_cost_notes:
+  - Use issue deltas rather than full ticket history.
+  - Split release drafting from task extraction.
+deployment_mode: hybrid
+assumptions:
+  - Release templates and issue hygiene are reasonably consistent.
+risks:
+  - Weak issue metadata can make summaries look complete when they are not.
+---
+
+import ExampleSpecMeta from '@site/src/components/ExampleSpecMeta';
+
+<ExampleSpecMeta />
+
+## Problem Statement
+
+Release coordination work is repetitive and text-heavy, but accuracy matters
+because summaries flow across internal and external teams.
+
+## Trigger
+
+Run at the end of a release cycle or after a release planning meeting.
+
+## Inputs
+
+- ticket deltas
+- release notes template
+- meeting notes
+
+## Systems/Tools
+
+- issue tracker
+- notes workspace
+- release planning sheet
+
+## Workflow Steps
+
+1. Gather items changed during the release window.
+2. Draft a release summary and extract follow-up tasks.
+3. Mark unclear items or dependencies for owner review.
+4. Prepare separate internal and external views.
+
+## Human Approval Points
+
+- Technical owner confirms accuracy.
+- Product owner approves customer-facing wording.
+
+## Outputs
+
+- release summary draft
+- task list by owner
+- clarification queue
+
+## Success Metrics
+
+- faster release communication prep
+- fewer missed follow-ups
+- higher consistency in release notes
+
+## Failure Modes
+
+- incomplete issue metadata hides important changes
+- unresolved issues are described as complete
+- the summary overstates certainty during incidents
+
+## Security Notes
+
+- keep internal-only details out of customer-facing output
+- maintain approval history for publication
+
+## Token-Cost Notes
+
+- pass compact change summaries, not entire ticket threads
+- separate extraction and final drafting steps
+
+## Deployment Mode
+
+`Hybrid` balances drafting efficiency with the need for technical and product
+review before anything leaves the team.
+
+## Prompt Skeleton
+
+```text
+Role: Product operations coordinator
+
+Objective: Draft a release summary and extract follow-up tasks from the latest release window.
+
+Inputs: Ticket deltas, meeting notes, release template.
+
+Constraints: Separate internal notes from external language, flag uncertainty, and avoid shipping unconfirmed claims.
+
+Required checks: Mark any item needing technical owner confirmation.
+
+Output format: Internal summary, external summary draft, follow-up tasks, clarifications.
+```

@@ -1,0 +1,130 @@
+---
+title: Shipment Exception Routing Agent
+description: Design spec for classifying fulfillment exceptions and preparing routed case summaries.
+content_type: agent-example
+review_status: reviewed
+industry: Ecommerce
+target_role: Fulfillment or returns operations
+problem_statement: Operations teams spend too much time sorting carrier, warehouse, and returns exceptions before the right specialist can act.
+trigger: A shipment or returns exception event is logged.
+inputs:
+  - Shipment event stream
+  - Order context
+  - Current exception handling rules
+systems_tools:
+  - Operations dashboard
+  - Commerce or OMS platform
+  - Carrier or warehouse event feed
+human_approval_points:
+  - Operations specialist approves customer-impacting actions.
+  - Inventory, refund, or carrier-claim actions are reviewed before execution.
+outputs:
+  - Exception classification
+  - Routed case summary
+  - Recommended next action
+success_metrics:
+  - Time to route exceptions
+  - Correct queue assignment rate
+  - Reduction in unresolved aging exceptions
+failure_modes:
+  - Noisy event data is misclassified
+  - The wrong team receives the case
+  - Financially meaningful actions are recommended too aggressively
+security_notes:
+  - Keep operational and customer data inside approved systems.
+  - Preserve audit logs for routed actions and approvals.
+token_cost_notes:
+  - Use structured event payloads rather than free-text logs.
+  - Avoid sending full order history unless the exception truly requires it.
+deployment_mode: hybrid
+assumptions:
+  - Exception taxonomies and routing queues are documented.
+risks:
+  - Event feeds can be noisy enough that confidence scoring is required for safe use.
+---
+
+import ExampleSpecMeta from '@site/src/components/ExampleSpecMeta';
+
+<ExampleSpecMeta />
+
+## Problem Statement
+
+Shipment and returns exceptions are expensive mostly because people spend time
+deciding where the case belongs before anyone fixes it.
+
+## Trigger
+
+Run whenever a qualifying exception event arrives in the operations queue.
+
+## Inputs
+
+- exception event data
+- order context
+- routing and handling rules
+
+## Systems/Tools
+
+- operations dashboard
+- OMS or commerce platform
+- carrier or warehouse feed
+
+## Workflow Steps
+
+1. Interpret the latest exception event with current order context.
+2. Classify the likely issue type and urgency.
+3. Draft a routed summary and recommend the owning queue.
+4. Flag cases with low confidence or irreversible consequences.
+
+## Human Approval Points
+
+- Specialist confirms the route for ambiguous cases.
+- Any financial or inventory action is reviewed before execution.
+
+## Outputs
+
+- exception classification
+- routed summary
+- recommended action
+
+## Success Metrics
+
+- faster routing
+- higher queue accuracy
+- lower exception aging
+
+## Failure Modes
+
+- event noise causes wrong routing
+- low-confidence cases are treated as certain
+- irreversible actions are suggested too early
+
+## Security Notes
+
+- confine order and operations data to approved systems
+- log approvals for any downstream action
+
+## Token-Cost Notes
+
+- use structured events first
+- only expand context for unresolved or ambiguous exceptions
+
+## Deployment Mode
+
+`Hybrid` keeps the classification work efficient while reserving operationally
+meaningful actions for human approval.
+
+## Prompt Skeleton
+
+```text
+Role: Operations routing assistant
+
+Objective: Classify a shipment exception and prepare a routed summary.
+
+Inputs: Event payload, order context, routing rules.
+
+Constraints: Flag low confidence, avoid executing actions, and separate operational facts from suggestions.
+
+Required checks: Highlight any case that could affect refunds, inventory, or customer promises.
+
+Output format: Exception type, urgency, recommended queue, case summary, review flags.
+```

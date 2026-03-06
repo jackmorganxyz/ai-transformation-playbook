@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap');
+
+:root {
+  --playbook-paper: #f6f1e9;
+  --playbook-paper-strong: #fffaf3;
+  --playbook-ink: #0a1d31;
+  --playbook-muted: #556779;
+  --playbook-accent: #d9673b;
+  --playbook-teal: #1d7a79;
+  --playbook-border: rgba(10, 29, 49, 0.12);
+  --playbook-display: 'Space Grotesk', 'Avenir Next', 'Segoe UI', sans-serif;
+  --playbook-body: 'IBM Plex Sans', 'Helvetica Neue', sans-serif;
+  --ifm-color-primary: #d9673b;
+  --ifm-color-primary-dark: #c55c34;
+  --ifm-color-primary-darker: #bb5630;
+  --ifm-color-primary-darkest: #9a4627;
+  --ifm-color-primary-light: #df7650;
+  --ifm-color-primary-lighter: #e38360;
+  --ifm-color-primary-lightest: #eb9d83;
+  --ifm-code-font-size: 95%;
+  --ifm-background-color: var(--playbook-paper);
+  --ifm-background-surface-color: #fff;
+  --ifm-font-color-base: var(--playbook-ink);
+  --ifm-navbar-background-color: rgba(246, 241, 233, 0.88);
+  --ifm-navbar-link-color: var(--playbook-ink);
+  --ifm-footer-background-color: #102131;
+  --ifm-footer-color: rgba(246, 241, 233, 0.82);
+  --ifm-footer-link-color: rgba(246, 241, 233, 0.95);
+  --ifm-heading-font-family: var(--playbook-display);
+  --ifm-font-family-base: var(--playbook-body);
+  --ifm-card-border-radius: 18px;
+  --ifm-global-shadow-lw: 0 18px 36px rgba(10, 29, 49, 0.08);
+  --docusaurus-highlighted-code-line-bg: rgba(217, 103, 59, 0.12);
+}
+
+[data-theme='dark'] {
+  --ifm-color-primary: #f08b5c;
+  --ifm-color-primary-dark: #eb7b46;
+  --ifm-color-primary-darker: #e8713a;
+  --ifm-color-primary-darkest: #d75717;
+  --ifm-color-primary-light: #f49b72;
+  --ifm-color-primary-lighter: #f5a47d;
+  --ifm-color-primary-lightest: #f8bea3;
+  --ifm-background-color: #0d1722;
+  --ifm-background-surface-color: #152332;
+  --ifm-font-color-base: #f6f1e9;
+  --ifm-navbar-background-color: rgba(13, 23, 34, 0.88);
+  --ifm-navbar-link-color: #f6f1e9;
+  --playbook-paper: #f6f1e9;
+  --playbook-ink: #f6f1e9;
+  --playbook-muted: #c0d0df;
+  --playbook-border: rgba(246, 241, 233, 0.12);
+  --docusaurus-highlighted-code-line-bg: rgba(240, 139, 92, 0.18);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background:
+    radial-gradient(circle at top left, rgba(217, 103, 59, 0.12), transparent 28%),
+    radial-gradient(circle at top right, rgba(29, 122, 121, 0.12), transparent 30%),
+    var(--ifm-background-color);
+}
+
+.navbar {
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid var(--playbook-border);
+}
+
+.navbar__brand:hover {
+  color: var(--ifm-navbar-link-color);
+}
+
+.navbar__title,
+.footer__title,
+h1,
+h2,
+h3,
+h4 {
+  letter-spacing: -0.02em;
+}
+
+.footer {
+  border-top: 1px solid rgba(246, 241, 233, 0.08);
+}
+
+.theme-doc-markdown {
+  font-size: 1.02rem;
+}
+
+.theme-doc-markdown table {
+  display: table;
+  width: 100%;
+}
+
+.theme-doc-markdown blockquote {
+  border-left: 4px solid var(--ifm-color-primary);
+  background: rgba(255, 255, 255, 0.42);
+  border-radius: 0 1rem 1rem 0;
+  padding: 1rem 1.25rem;
+}
+
+[data-theme='dark'] .theme-doc-markdown blockquote {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.pagination-nav__link {
+  border-radius: 1rem;
+}
+
+.card {
+  border-radius: 1rem;
+}
+
+.theme-code-block,
+.markdown code {
+  border-radius: 0.65rem;
+}

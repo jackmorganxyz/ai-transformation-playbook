@@ -1,0 +1,130 @@
+---
+title: Account Health Brief Agent
+description: Design spec for preparing reviewable account briefs from delivery, CRM, and meeting context.
+content_type: agent-example
+review_status: reviewed
+industry: Professional services
+target_role: Client or account management
+problem_statement: Account teams spend too much time assembling fragmented relationship, delivery, and pipeline signals before customer check-ins.
+trigger: A client review meeting is scheduled or a weekly account review starts.
+inputs:
+  - CRM notes and opportunity state
+  - Delivery summary and open risks
+  - Recent meeting actions
+systems_tools:
+  - CRM
+  - Delivery tracker
+  - Meeting notes repository
+human_approval_points:
+  - Account owner reviews every external-facing recommendation.
+  - Expansion or churn risk framing is confirmed before being logged.
+outputs:
+  - Draft account health brief
+  - Open actions by owner
+  - Suggested relationship watch-outs
+success_metrics:
+  - Prep time for account reviews
+  - Percentage of accepted action summaries
+  - Fewer missed follow-ups
+failure_modes:
+  - Relationship nuance gets flattened
+  - Internal speculation is presented as fact
+  - Delivery issues are overemphasized without customer context
+security_notes:
+  - Restrict access to approved account systems.
+  - Do not send follow-up email drafts without human review.
+token_cost_notes:
+  - Prioritize recent notes and structured CRM fields.
+  - Exclude redundant historical context unless risk is unresolved.
+deployment_mode: hybrid
+assumptions:
+  - CRM hygiene is strong enough to anchor the brief.
+risks:
+  - Weak note quality can produce briefs that look polished but misstate account temperature.
+---
+
+import ExampleSpecMeta from '@site/src/components/ExampleSpecMeta';
+
+<ExampleSpecMeta />
+
+## Problem Statement
+
+Account managers need a concise view of delivery, sentiment, and next steps, but
+that view usually has to be assembled manually before each client interaction.
+
+## Trigger
+
+Run when an account review or client meeting prep cycle begins.
+
+## Inputs
+
+- CRM stage and activity notes
+- delivery summary and open issues
+- last meeting actions and owners
+
+## Systems/Tools
+
+- CRM
+- delivery tracker
+- notes workspace
+
+## Workflow Steps
+
+1. Pull the latest account, delivery, and meeting artifacts.
+2. Cluster open issues, decisions, and follow-ups by theme.
+3. Draft an account health brief with explicit uncertainty markers.
+4. Suggest watch-outs and owner next steps for review.
+
+## Human Approval Points
+
+- Account owner edits all client-facing recommendations.
+- Leadership-facing risk statements are confirmed before publication.
+
+## Outputs
+
+- account prep brief
+- action list by owner
+- relationship and delivery watch-outs
+
+## Success Metrics
+
+- lower prep time
+- better follow-up completion
+- fewer missed relationship risks
+
+## Failure Modes
+
+- a subtle client signal is missed
+- a pipeline risk is overstated
+- duplicated notes create noisy recommendations
+
+## Security Notes
+
+- keep account data within approved systems
+- avoid auto-posting summaries to shared client channels
+
+## Token-Cost Notes
+
+- focus on the latest cycle and unresolved risks
+- compress repeated meeting notes into structured action records
+
+## Deployment Mode
+
+`Hybrid` is appropriate because the agent prepares material efficiently, but the
+relationship owner remains accountable for interpretation and outreach.
+
+## Prompt Skeleton
+
+```text
+Role: Account prep analyst
+
+Objective: Create a concise internal account health brief for review.
+
+Inputs: CRM notes, delivery summary, open actions, recent meeting notes.
+
+Constraints: Distinguish confirmed facts from inferred risk. Never draft direct client promises as final.
+
+Required checks: Highlight anything the account owner must verify before external use.
+
+Output format: Account summary, risks, opportunities, open actions, watch-outs.
+```

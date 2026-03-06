@@ -1,0 +1,44 @@
+name: Approved work item
+description: Track approved, actionable work that is ready for delivery.
+title: "[Work Item]: "
+labels:
+  - approved
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this template only after the work is already agreed. Early-stage ideas belong in GitHub Discussions.
+  - type: input
+    id: summary
+    attributes:
+      label: Outcome
+      description: What should change if this issue is completed?
+      placeholder: Publish a new SaaS customer support example spec
+    validations:
+      required: true
+  - type: textarea
+    id: workflow
+    attributes:
+      label: Real workflow
+      description: Which business workflow is this tied to?
+      placeholder: Describe the current workflow, actors, and systems involved.
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope boundaries
+      description: What is explicitly in scope and out of scope?
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: Define the reviewer checks required for completion.
+      placeholder: |
+        - Human approval points are explicit
+        - Security notes are documented
+        - Token-cost notes are documented
+    validations:
+      required: true

@@ -1,0 +1,144 @@
+---
+title: Knowledge To Action Pattern
+description: Cross-industry pattern for grounding workflow drafts in approved knowledge before a human approves the next step.
+content_type: reference-pattern
+review_status: reviewed
+pattern_scope: Retrieval-grounded drafting and recommendation support
+applicable_industries:
+  - Professional services
+  - SaaS
+  - Ecommerce
+applicable_roles:
+  - Support
+  - Research
+  - Operations
+problem_statement: Teams need faster draft generation, but only when the output remains grounded in approved knowledge and reviewed before action.
+trigger: A workflow step needs a draft, brief, or recommendation backed by known source material.
+inputs:
+  - User request or workflow task
+  - Approved knowledge source
+  - Output template
+systems_tools:
+  - Knowledge base or document store
+  - Workflow application
+  - Output template
+human_approval_points:
+  - A human reviews any recommendation or outbound content before use.
+  - Missing or weak evidence is escalated instead of guessed.
+outputs:
+  - Grounded draft
+  - Evidence list
+  - Open questions
+success_metrics:
+  - Draft acceptance rate
+  - Reduced research time
+  - Lower unsupported-claim rate
+failure_modes:
+  - Retrieval misses the right source
+  - Unsupported claims are presented confidently
+  - Source material is stale
+security_notes:
+  - Limit retrieval to approved knowledge sources.
+  - Keep source provenance visible in the output.
+token_cost_notes:
+  - Retrieve only the smallest set of relevant passages.
+  - Reuse templates instead of re-sending style guidance each run.
+deployment_mode: hybrid
+assumptions:
+  - The knowledge source is maintained and permissioned correctly.
+risks:
+  - Teams may confuse a grounded draft with verified final truth if provenance is hidden.
+---
+
+import ExampleSpecMeta from '@site/src/components/ExampleSpecMeta';
+
+<ExampleSpecMeta />
+
+## Problem Statement
+
+Many workflows need a fast first draft, but the draft is only useful if it stays
+attached to approved knowledge and visible evidence.
+
+## Pattern Fit
+
+Use this when the workflow has a clear knowledge source and a human is available
+to review the result. Avoid it when the underlying source is stale or the
+workflow depends on uncaptured tribal knowledge.
+
+## Trigger
+
+A task requests a brief, reply, summary, or recommendation grounded in existing
+approved material.
+
+## Inputs
+
+- workflow request
+- approved source material
+- output template
+
+## Systems/Tools
+
+- knowledge base
+- workflow system
+- draft template
+
+## Workflow Steps
+
+1. Retrieve the smallest relevant set of approved source passages.
+2. Draft the output using only that source set.
+3. Surface citations, evidence, and any unanswered questions.
+4. Route the draft to a human for review.
+
+## Human Approval Points
+
+- Reviewer confirms that the draft matches the approved source.
+- Unsupported claims are removed or sent back for more evidence.
+
+## Outputs
+
+- grounded draft
+- evidence list
+- open questions
+
+## Success Metrics
+
+- faster draft preparation
+- higher reviewer acceptance
+- fewer unsupported claims
+
+## Failure Modes
+
+- stale or incomplete retrieval
+- grounded output that still misses material nuance
+- hidden uncertainty
+
+## Security Notes
+
+- scope retrieval to approved repositories
+- preserve provenance for each material claim
+
+## Token-Cost Notes
+
+- retrieve excerpts, not full documents
+- keep templating separate from retrieval
+
+## Deployment Mode
+
+`Hybrid` is usually right because review and evidence checking matter as much as
+the draft itself.
+
+## Prompt Skeleton
+
+```text
+Role: Knowledge-grounded drafting assistant
+
+Objective: Create a draft using only approved source material.
+
+Inputs: Workflow request, approved source excerpts, output template.
+
+Constraints: Cite evidence, flag unsupported questions, and do not invent facts outside the source set.
+
+Required checks: Surface any missing evidence before final use.
+
+Output format: Draft, cited evidence, open questions, reviewer flags.
+```

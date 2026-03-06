@@ -1,0 +1,130 @@
+---
+title: Pipeline Next-Step Agent
+description: Design spec for converting call notes and CRM state into reviewable next-step updates.
+content_type: agent-example
+review_status: reviewed
+industry: SaaS
+target_role: Revenue operations or sales
+problem_statement: Sales teams spend too much time turning call notes into CRM hygiene, next-step actions, and stage-quality checks.
+trigger: A sales call ends or a pipeline hygiene review starts.
+inputs:
+  - Call notes or transcript summary
+  - CRM opportunity state
+  - Stage definitions and field requirements
+systems_tools:
+  - CRM
+  - Meeting notes or call recorder
+  - Task manager
+human_approval_points:
+  - Rep reviews all next-step recommendations.
+  - Forecast-affecting stage changes require human confirmation.
+outputs:
+  - Suggested CRM updates
+  - Next-step task list
+  - Opportunity hygiene warnings
+success_metrics:
+  - CRM update latency
+  - Reduced missing next steps
+  - Accepted opportunity hygiene suggestions
+failure_modes:
+  - Incorrect stage interpretation
+  - Missing deal nuance from the conversation
+  - Overconfident risk labeling
+security_notes:
+  - Restrict access to approved revenue systems.
+  - Preserve auditability for any CRM write-back.
+token_cost_notes:
+  - Use concise post-call summaries when available.
+  - Pass only stage-specific field requirements into the prompt.
+deployment_mode: hybrid
+assumptions:
+  - Stage definitions are explicit and current.
+risks:
+  - If the source notes are weak, the agent can reinforce poor CRM hygiene instead of fixing it.
+---
+
+import ExampleSpecMeta from '@site/src/components/ExampleSpecMeta';
+
+<ExampleSpecMeta />
+
+## Problem Statement
+
+Revenue teams need cleaner opportunity records and clearer next steps, but not
+an autonomous system making deal judgments for them.
+
+## Trigger
+
+Run after a meeting summary lands or during a scheduled hygiene review.
+
+## Inputs
+
+- call summary
+- current CRM fields
+- stage requirements
+
+## Systems/Tools
+
+- CRM
+- call summary source
+- task system
+
+## Workflow Steps
+
+1. Compare the latest call summary against required CRM fields.
+2. Draft missing field updates and owner next steps.
+3. Highlight gaps, stale data, and stage quality risks.
+4. Package the results for the rep or RevOps reviewer.
+
+## Human Approval Points
+
+- Rep approves next steps and edits language.
+- Stage changes are confirmed before write-back.
+
+## Outputs
+
+- suggested field updates
+- task list
+- hygiene alerts
+
+## Success Metrics
+
+- faster CRM updates
+- fewer stale opportunities
+- better completion of next steps
+
+## Failure Modes
+
+- wrong interpretation of deal progress
+- poor source notes create misleading tasks
+- automated updates reduce trust in CRM
+
+## Security Notes
+
+- keep pipeline data in approved systems
+- log who approved each write-back
+
+## Token-Cost Notes
+
+- strip filler content from call notes
+- inject only the field requirements for the active stage
+
+## Deployment Mode
+
+`Hybrid` is appropriate because the workflow can automate preparation, but
+forecast and deal decisions remain explicitly human.
+
+## Prompt Skeleton
+
+```text
+Role: Revenue operations assistant
+
+Objective: Suggest CRM hygiene updates and next steps after a sales interaction.
+
+Inputs: Call summary, current opportunity record, stage rules.
+
+Constraints: Do not change stage or forecast without human confirmation. Flag uncertainty clearly.
+
+Required checks: Highlight missing evidence for any suggested change.
+
+Output format: Suggested updates, next steps, hygiene warnings, confidence notes.
+```

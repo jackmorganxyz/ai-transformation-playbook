@@ -1,0 +1,130 @@
+---
+title: Research Monitor Agent
+description: Design spec for monitoring source sets and drafting evidence-backed research briefs.
+content_type: agent-example
+review_status: reviewed
+industry: Professional services
+target_role: Analyst or research
+problem_statement: Analysts spend too much time scanning recurring source sets and formatting first-pass briefs before they can interpret the findings.
+trigger: A recurring monitoring window closes or a research brief is requested.
+inputs:
+  - Approved source list
+  - Client research themes
+  - Prior brief format
+systems_tools:
+  - Web or database sources
+  - Notes repository
+  - Brief template
+human_approval_points:
+  - Analyst verifies relevance and evidence before publishing.
+  - Any recommendation language is reviewed by the engagement lead.
+outputs:
+  - Draft research brief
+  - Source excerpts with citations
+  - Suggested follow-up questions
+success_metrics:
+  - Monitoring time saved
+  - Citation accuracy
+  - Acceptance rate of draft brief sections
+failure_modes:
+  - Source relevance is misjudged
+  - Claims are summarized without enough evidence
+  - Duplicate findings crowd out real changes
+security_notes:
+  - Keep proprietary client hypotheses out of shared prompts.
+  - Preserve source provenance for every material claim.
+token_cost_notes:
+  - Retrieve only source excerpts relevant to the current research theme.
+  - Reuse brief structure instead of re-sending full style guidance each run.
+deployment_mode: hybrid
+assumptions:
+  - The source list and research themes are already scoped by a human.
+risks:
+  - Analysts may over-trust concise summaries if citations are not surfaced prominently.
+---
+
+import ExampleSpecMeta from '@site/src/components/ExampleSpecMeta';
+
+<ExampleSpecMeta />
+
+## Problem Statement
+
+Research teams need help with monitoring and first-pass synthesis, not with
+fully autonomous recommendations.
+
+## Trigger
+
+Run on a scheduled monitoring cadence or when a scoped brief request is opened.
+
+## Inputs
+
+- approved source list
+- topic tags or research brief
+- existing output template
+
+## Systems/Tools
+
+- source databases or websites
+- research notes system
+- brief template
+
+## Workflow Steps
+
+1. Retrieve new or changed source material for the scoped topic.
+2. Extract evidence, quotes, and facts with citations.
+3. Draft a structured brief with relevance notes and uncertainty markers.
+4. Suggest next research questions where evidence is thin.
+
+## Human Approval Points
+
+- Analyst confirms relevance and wording.
+- Engagement lead approves recommendations before client use.
+
+## Outputs
+
+- draft brief
+- cited findings
+- follow-up research questions
+
+## Success Metrics
+
+- reduced monitoring time
+- citation accuracy
+- fewer missed material updates
+
+## Failure Modes
+
+- weak source filtering
+- unsupported summary statements
+- repeated noise from unchanged content
+
+## Security Notes
+
+- maintain provenance for every claim
+- keep client strategy context in approved workspaces
+
+## Token-Cost Notes
+
+- pass excerpts, not full articles, into the synthesis step
+- separate retrieval from summary generation
+
+## Deployment Mode
+
+`Hybrid` lets the agent handle structured monitoring and drafting while analysts
+retain final judgment over interpretation.
+
+## Prompt Skeleton
+
+```text
+Role: Research monitoring analyst
+
+Objective: Draft a sourced brief on new developments for a defined topic.
+
+Inputs: Approved sources, monitoring window, topic tags, prior brief template.
+
+Constraints: Cite each material claim, flag uncertainty, and avoid strategic recommendations unless explicitly asked.
+
+Required checks: Surface any claim that lacks direct support.
+
+Output format: Executive summary, cited findings, implications, follow-up questions.
+```

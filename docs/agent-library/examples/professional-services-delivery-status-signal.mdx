@@ -1,0 +1,131 @@
+---
+title: Project Status Signal Agent
+description: Design spec for aggregating delivery signals into a reviewable status and risk brief.
+content_type: agent-example
+review_status: reviewed
+industry: Professional services
+target_role: Delivery or project management
+problem_statement: Delivery leads spend too much time gathering fragmented project updates before they can assess risk and publish status.
+trigger: The daily sync ends or the weekly status cycle begins.
+inputs:
+  - Project board snapshot
+  - Recent meeting notes
+  - Open risks and milestone dates
+systems_tools:
+  - PSA or project tracker
+  - Shared notes workspace
+  - Risk register
+human_approval_points:
+  - Delivery lead reviews the summary before it is shared externally.
+  - New risk severity labels are confirmed before write-back.
+outputs:
+  - Draft internal status brief
+  - Flagged milestone and dependency risks
+  - Suggested owner follow-ups
+success_metrics:
+  - Time to prepare weekly status update
+  - Percentage of correctly flagged schedule risks
+  - Reduction in stale action items
+failure_modes:
+  - Missing context from work tracked outside the system
+  - Overstating confidence on ambiguous blockers
+  - Repeating stale status from old notes
+security_notes:
+  - Keep client artifacts inside approved delivery systems.
+  - Do not auto-send status updates to clients.
+token_cost_notes:
+  - Summarize only the delta since the last review.
+  - Limit context to the active project and current reporting window.
+deployment_mode: hybrid
+assumptions:
+  - Project updates are recorded in a shared system with acceptable freshness.
+risks:
+  - Teams with weak update discipline may trust the draft more than the underlying data deserves.
+---
+
+import ExampleSpecMeta from '@site/src/components/ExampleSpecMeta';
+
+<ExampleSpecMeta />
+
+## Problem Statement
+
+Delivery leads need a current view of milestones, blockers, and owner follow-up,
+but the raw information is spread across boards, notes, and side conversations.
+
+## Trigger
+
+Run after a scheduled standup, project sync, or reporting checkpoint.
+
+## Inputs
+
+- project status fields
+- open tasks and overdue milestones
+- notes from the latest delivery meeting
+
+## Systems/Tools
+
+- project tracker
+- notes workspace
+- risk register
+
+## Workflow Steps
+
+1. Pull the latest project status data and recent notes.
+2. Compare current milestone state with the prior reporting window.
+3. Draft a status summary with risks, blockers, and missing updates.
+4. Flag items that need owner confirmation.
+
+## Human Approval Points
+
+- Delivery lead confirms the risk framing.
+- External-facing wording is edited before sharing with clients.
+
+## Outputs
+
+- internal project brief
+- risk and blocker list
+- follow-up prompts for owners
+
+## Success Metrics
+
+- reduced status-prep time
+- fewer stale milestones in reports
+- higher on-time owner follow-through
+
+## Failure Modes
+
+- hidden offline work causes inaccurate status
+- ambiguous blockers are labeled too strongly
+- the model misses important nuance in client promises
+
+## Security Notes
+
+- confine client information to approved workspaces
+- preserve an audit trail for any write-back
+
+## Token-Cost Notes
+
+- use structured deltas instead of full project history
+- cap note history to the active reporting period
+
+## Deployment Mode
+
+`Hybrid` fits because the workflow benefits from hosted summarization quality,
+but review stays with the delivery lead and no external send happens
+automatically.
+
+## Prompt Skeleton
+
+```text
+Role: Delivery operations analyst
+
+Objective: Draft a current internal status brief for one project.
+
+Inputs: Project status fields, milestone dates, open actions, recent meeting notes.
+
+Constraints: Flag uncertainty, do not invent owner status, and separate confirmed risks from missing data.
+
+Required checks: Highlight anything that needs delivery-lead review before client sharing.
+
+Output format: Summary, risks, blockers, owner follow-ups, missing updates.
+```
