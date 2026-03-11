@@ -5,15 +5,14 @@ output without multiplying headcount.
 
 ## Start
 
-Open [docs/index.md](docs/index.md). The repo follows this path:
+Open [docs/index.md](docs/index.md). The playbook follows six steps:
 
-1. understand why AI augmentation works
-2. analyse the company
-3. map each role's workflows
-4. score tasks for automation fit
-5. pick and design the augmentation
-6. review security, deployment, and cost
-7. launch, measure, and expand
+1. Understand why AI augmentation works
+2. Analyse the company
+3. Map each role's workflows
+4. Score tasks for automation fit
+5. Design the augmentation
+6. Launch, measure, and expand
 
 ## Stack
 

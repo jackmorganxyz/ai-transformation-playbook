@@ -8,8 +8,8 @@ const repoUrl = `https://github.com/${repoOwner}/${repoName}`;
 const isUserSite = repoName === `${repoOwner}.github.io`;
 
 const config: Config = {
-  title: 'AI Transformation Playbook',
-  tagline: 'Research workflows. Score tasks. Launch controlled AI pilots.',
+  title: 'AI Augmentation Playbook',
+  tagline: 'Augment every employee with AI. Multiply output without multiplying headcount.',
   favicon: 'img/favicon.ico',
   future: {
     v4: true,
@@ -51,14 +51,14 @@ const config: Config = {
       respectPrefersColorScheme: true,
     },
     navbar: {
-      title: 'AI Transformation Playbook',
+      title: 'AI Augmentation Playbook',
       logo: {
-        alt: 'AI Transformation Playbook logo',
+        alt: 'AI Augmentation Playbook logo',
         src: 'img/logo.svg',
       },
       items: [
         {to: '/docs', label: 'Start', position: 'left'},
-        {to: '/docs/agent-library', label: 'Examples', position: 'left'},
+        {to: '/docs/vertical-guides', label: 'Examples', position: 'left'},
         {to: '/docs/contributing', label: 'Contribute', position: 'left'},
         {
           href: repoUrl,
@@ -71,15 +71,15 @@ const config: Config = {
       style: 'dark',
       links: [
         {
-          title: 'Start',
+          title: 'Playbook',
           items: [
             {
               label: 'Start here',
               to: '/docs',
             },
             {
-              label: 'Framework',
-              to: '/docs/overview',
+              label: 'Why AI augmentation',
+              to: '/docs/why',
             },
           ],
         },
@@ -88,11 +88,11 @@ const config: Config = {
           items: [
             {
               label: 'Scoring worksheet',
-              to: '/docs/task-scoring/task-inventory-scoring-worksheet',
+              to: '/docs/score/worksheet',
             },
             {
-              label: 'Security checklist',
-              to: '/docs/security/security-review-checklist',
+              label: 'Constraints checklist',
+              to: '/docs/design/constraints',
             },
           ],
         },
@@ -111,7 +111,7 @@ const config: Config = {
         },
       ],
       copyright:
-        `Copyright © ${new Date().getFullYear()} AI Transformation Playbook contributors. ` +
+        `Copyright © ${new Date().getFullYear()} AI Augmentation Playbook contributors. ` +
         'Content licensed CC BY 4.0. Code and configuration licensed MIT.',
     },
     prism: {

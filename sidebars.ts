@@ -4,72 +4,37 @@ const sidebars: SidebarsConfig = {
   playbook: [
     'index',
     {
-      type: 'category',
+      type: 'doc',
+      id: 'why/index',
       label: '1. Why AI Augmentation',
-      link: {type: 'doc', id: 'overview/index'},
-      items: [],
     },
     {
       type: 'category',
       label: '2. Analyse the Company',
-      link: {type: 'doc', id: 'company-research/index'},
-      items: [
-        'company-research/company-research-brief',
-        'company-research/company-assessment-worksheet',
-      ],
+      link: {type: 'doc', id: 'analyse/index'},
+      items: ['analyse/worksheet'],
     },
     {
-      type: 'category',
+      type: 'doc',
+      id: 'map/index',
       label: '3. Map Workflows',
-      link: {type: 'doc', id: 'opportunity-mapping/index'},
-      items: ['opportunity-mapping/workflow-discovery'],
     },
     {
       type: 'category',
       label: '4. Score Tasks',
-      link: {type: 'doc', id: 'task-scoring/index'},
-      items: [
-        'task-scoring/canonical-task-rubric',
-        'task-scoring/task-inventory-scoring-worksheet',
-      ],
+      link: {type: 'doc', id: 'score/index'},
+      items: ['score/worksheet'],
     },
     {
       type: 'category',
-      label: '5. Pick and Design the Augmentation',
-      link: {type: 'doc', id: 'automation-design/index'},
-      items: [
-        'automation-design/automation-prioritization',
-        'automation-design/agent-design-brief',
-      ],
-    },
-    {
-      type: 'category',
-      label: '6. Review Constraints',
-      items: [
-        {
-          type: 'doc',
-          id: 'security/index',
-          label: 'Security Review',
-        },
-        'security/security-review-checklist',
-        {
-          type: 'doc',
-          id: 'on-prem-local-deployment/index',
-          label: 'Deployment Choices',
-        },
-        'on-prem-local-deployment/local-first-deployment-checklist',
-        {
-          type: 'doc',
-          id: 'token-efficiency/index',
-          label: 'Token Cost',
-        },
-        'token-efficiency/token-budget-on-prem-decision-worksheet',
-      ],
+      label: '5. Design the Augmentation',
+      link: {type: 'doc', id: 'design/index'},
+      items: ['design/constraints'],
     },
     {
       type: 'doc',
-      id: 'automation-design/pilot-rollout-measurement-governance',
-      label: '7. Launch, Measure, and Expand',
+      id: 'launch/index',
+      label: '6. Launch, Measure, Expand',
     },
     {
       type: 'category',
@@ -114,7 +79,7 @@ const sidebars: SidebarsConfig = {
         },
         {
           type: 'category',
-          label: 'Role Examples',
+          label: 'Agent Specs',
           items: [
             'agent-library/examples/professional-services-delivery-status-signal',
             'agent-library/examples/professional-services-account-health-brief',
