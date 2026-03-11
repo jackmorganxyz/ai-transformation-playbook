@@ -52,4 +52,4 @@ the bandwidth. The human handles the direction.
 
 ## Next step
 
-[Analyse the company →](../analyse/index.md)
+[Key Concepts →](../key-concepts/index.md)

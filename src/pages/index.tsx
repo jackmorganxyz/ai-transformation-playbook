@@ -5,32 +5,37 @@ import styles from './index.module.css';
 
 const steps = [
   {
-    title: '1. Understand why',
+    title: 'Understand why',
     body: 'The business case for augmenting every employee with AI.',
     href: '/docs/why',
   },
   {
-    title: '2. Analyse the company',
+    title: 'Key concepts',
+    body: 'Plain-language definitions of augmentation, workflows, agents, and more.',
+    href: '/docs/key-concepts',
+  },
+  {
+    title: 'Analyse the company',
     body: 'Capture the business model, workflows, systems, and constraints.',
     href: '/docs/analyse',
   },
   {
-    title: '3. Map workflows',
+    title: 'Map workflows',
     body: 'Break each role into specific tasks. Separate judgment from execution.',
     href: '/docs/map',
   },
   {
-    title: '4. Score tasks',
+    title: 'Score tasks',
     body: 'Use one rubric to decide what AI handles and where humans stay in control.',
     href: '/docs/score',
   },
   {
-    title: '5. Design the augmentation',
+    title: 'Design the augmentation',
     body: 'Pick a target, write the agent brief, and review constraints.',
     href: '/docs/design',
   },
   {
-    title: '6. Launch, measure, expand',
+    title: 'Launch, measure, expand',
     body: 'Start in shadow mode. Graduate to draft-review. Expand after formal review.',
     href: '/docs/launch',
   },
@@ -82,7 +87,7 @@ function HomePage(): ReactNode {
             </div>
           </div>
           <aside className={styles.heroPanel}>
-            <p className={styles.panelLabel}>The six steps</p>
+            <p className={styles.panelLabel}>The seven steps</p>
             <ol className={styles.panelList}>
               {steps.map((step) => (
                 <li key={step.title}>

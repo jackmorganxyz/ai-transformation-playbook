@@ -9,32 +9,37 @@ const sidebars: SidebarsConfig = {
       label: '1. Why AI Augmentation',
     },
     {
+      type: 'doc',
+      id: 'key-concepts/index',
+      label: '2. Key Concepts',
+    },
+    {
       type: 'category',
-      label: '2. Analyse the Company',
+      label: '3. Analyse the Company',
       link: {type: 'doc', id: 'analyse/index'},
       items: ['analyse/worksheet'],
     },
     {
       type: 'doc',
       id: 'map/index',
-      label: '3. Map Workflows',
+      label: '4. Map Workflows',
     },
     {
       type: 'category',
-      label: '4. Score Tasks',
+      label: '5. Score Tasks',
       link: {type: 'doc', id: 'score/index'},
       items: ['score/worksheet'],
     },
     {
       type: 'category',
-      label: '5. Design the Augmentation',
+      label: '6. Design the Augmentation',
       link: {type: 'doc', id: 'design/index'},
       items: ['design/constraints'],
     },
     {
       type: 'doc',
       id: 'launch/index',
-      label: '6. Launch, Measure, Expand',
+      label: '7. Launch, Measure, Expand',
     },
     {
       type: 'category',
