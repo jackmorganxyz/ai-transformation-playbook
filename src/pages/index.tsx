@@ -5,52 +5,47 @@ import styles from './index.module.css';
 
 const steps = [
   {
-    title: '1. Understand the framework',
-    body: 'See the full sequence, outputs, and rules before you choose a workflow.',
-    href: '/docs/overview',
+    title: '1. Understand why',
+    body: 'The business case for augmenting every employee with AI.',
+    href: '/docs/why',
   },
   {
-    title: '2. Research the company',
-    body: 'Capture the business model, broken workflows, systems, and hard constraints.',
-    href: '/docs/company-research',
+    title: '2. Analyse the company',
+    body: 'Capture the business model, workflows, systems, and constraints.',
+    href: '/docs/analyse',
   },
   {
     title: '3. Map workflows',
-    body: 'Break one workflow into real tasks with owners, triggers, inputs, and outputs.',
-    href: '/docs/opportunity-mapping',
+    body: 'Break each role into specific tasks. Separate judgment from execution.',
+    href: '/docs/map',
   },
   {
     title: '4. Score tasks',
-    body: 'Use one rubric to choose the right posture for each task.',
-    href: '/docs/task-scoring',
+    body: 'Use one rubric to decide what AI handles and where humans stay in control.',
+    href: '/docs/score',
   },
   {
-    title: '5. Design one pilot',
-    body: 'Define the trigger, inputs, approvals, outputs, security review, and rollback path.',
-    href: '/docs/automation-design',
+    title: '5. Design the augmentation',
+    body: 'Pick a target, write the agent brief, and review constraints.',
+    href: '/docs/design',
   },
   {
-    title: '6. Review constraints',
-    body: 'Check security, deployment, and token cost before anything goes live.',
-    href: '/docs/security',
-  },
-  {
-    title: '7. Launch with controls',
-    body: 'Start narrow. Measure value, quality, and control. Expand only after review.',
-    href: '/docs/automation-design/pilot-rollout-measurement-governance',
+    title: '6. Launch, measure, expand',
+    body: 'Start in shadow mode. Graduate to draft-review. Expand after formal review.',
+    href: '/docs/launch',
   },
 ];
 
 const resources = [
   {
-    title: 'Decision tools',
-    body: 'Assessment worksheet, scoring sheet, security checklist, deployment checklist, and token worksheet.',
+    title: 'Worksheets and checklists',
+    body: 'Assessment worksheet, scoring sheet, and constraints checklist.',
     href: '/docs',
     label: 'Open start page',
   },
   {
     title: 'Examples',
-    body: 'Role guides, design specs, and reusable patterns for common workflow shapes.',
+    body: 'Role guides, agent design specs, and reusable patterns by industry.',
     href: '/docs/agent-library',
     label: 'Browse examples',
   },
@@ -69,11 +64,11 @@ function HomePage(): ReactNode {
         <div className={`container ${styles.heroShell}`}>
           <div className={styles.heroCopy}>
             <p className={styles.eyebrow}>Docs-first and vendor-neutral</p>
-            <h1 className={styles.title}>A clear manual for starting AI work.</h1>
+            <h1 className={styles.title}>Augment every employee with AI.</h1>
             <p className={styles.lede}>
-              Use this repo to research a company, map workflows, score tasks,
-              pick a pilot, and launch it with review, security, and
-              governance built in.
+              A step-by-step playbook for multiplying output without
+              multiplying headcount. Analyse your company, map workflows,
+              score tasks, design the augmentation, and launch it safely.
             </p>
             <div className={styles.actions}>
               <Link className={`button button--primary button--lg ${styles.primaryAction}`} to="/docs">
@@ -87,7 +82,7 @@ function HomePage(): ReactNode {
             </div>
           </div>
           <aside className={styles.heroPanel}>
-            <p className={styles.panelLabel}>Start in this order</p>
+            <p className={styles.panelLabel}>The six steps</p>
             <ol className={styles.panelList}>
               {steps.map((step) => (
                 <li key={step.title}>
@@ -120,8 +115,8 @@ function HomePage(): ReactNode {
 export default function Home(): ReactNode {
   return (
     <Layout
-      title="AI Transformation Playbook"
-      description="A docs-first playbook for researching workflows, scoring tasks, and launching controlled AI pilots.">
+      title="AI Augmentation Playbook"
+      description="Augment every employee with AI. Multiply output without multiplying headcount.">
       <HomePage />
     </Layout>
   );

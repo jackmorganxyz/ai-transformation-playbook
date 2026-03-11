@@ -1,48 +1,43 @@
 ---
 slug: /
-title: Start Here
-description: What this playbook is, how to use it, and where to find the next step.
+title: AI Augmentation Playbook
+description: Augment every employee with AI. Multiply output without multiplying headcount.
 ---
 
-# Start Here
+# AI Augmentation Playbook
 
-AI Transformation Playbook is a docs-first manual for choosing and launching
-practical AI work.
+A step-by-step method for augmenting your workforce with AI so every person
+produces two to three times more output for a fraction of the cost of hiring
+another head.
 
-Use it to:
+## The steps
 
-- research the company
-- map one workflow into real tasks
-- score each task with one rubric
-- choose a pilot that is small and defensible
-- design approvals, security, deployment, and rollout before code
+| # | Step | What you produce |
+| --- | --- | --- |
+| 1 | [Understand why](why/index.md) | Clarity on the business case |
+| 2 | [Analyse the company](analyse/index.md) | Company brief and assessment worksheet |
+| 3 | [Map workflows](map/index.md) | Task inventory for each role |
+| 4 | [Score tasks](score/index.md) | Scored task list with automation postures |
+| 5 | [Design the augmentation](design/index.md) | Agent design brief and completed constraints review |
+| 6 | [Launch, measure, expand](launch/index.md) | Running pilot with success metrics |
 
-## Start in this order
+Each step produces a document you use in the next step.
 
-1. [Understand the framework](overview/index.md)
-2. [Research the company](company-research/index.md)
-3. [Map workflows](opportunity-mapping/index.md)
-4. [Score tasks](task-scoring/index.md)
-5. [Pick and design the pilot](automation-design/index.md)
-6. [Review security](security/index.md)
-7. [Review deployment and token cost](on-prem-local-deployment/index.md)
-8. [Launch and govern](automation-design/pilot-rollout-measurement-governance.md)
+## Quick links
 
-## Need something specific?
-
-- Examples: [Role guides](vertical-guides/index.md) and
-  [agent specs](agent-library/index.md)
-- Templates: [Contribution templates](contributing/contribution-templates.md)
-- Decision tools:
-  [assessment worksheet](company-research/company-assessment-worksheet.md),
-  [scoring worksheet](task-scoring/task-inventory-scoring-worksheet.md),
-  [security checklist](security/security-review-checklist.md),
-  [deployment checklist](on-prem-local-deployment/local-first-deployment-checklist.md),
-  [token worksheet](token-efficiency/token-budget-on-prem-decision-worksheet.md)
+- [Role guides](vertical-guides/index.md) — industry-specific starting points
+- [Agent specs and patterns](agent-library/index.md) — ready-to-use design
+  examples
+- [Assessment worksheet](analyse/worksheet.md) — company context template
+- [Scoring worksheet](score/worksheet.md) — task rubric template
+- [Constraints checklist](design/constraints.md) — security, deployment, and
+  cost review
+- [Contributing](contributing/index.md) — how to add examples and guides
 
 ## Ground rules
 
+- Augment the employee, do not replace the employee.
 - Start with a workflow, not a model.
 - Keep approval points explicit.
-- Treat security, deployment, and rollback as design inputs.
+- Treat security, deployment, and rollback as design inputs, not afterthoughts.
 - Keep the core framework vendor-neutral.

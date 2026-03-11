@@ -1,13 +1,16 @@
 ---
-title: Company Research Brief
-description: A one-page brief for business context, workflow context, systems, and constraints.
+title: Analyse the Company
+description: Capture the business context needed to score tasks honestly and pick the right augmentation targets.
 ---
 
-# Company Research Brief
+# Analyse the Company
 
-Write one page. Keep it factual.
+Do this before you score anything. You cannot augment what you do not
+understand.
 
-## Research prompts
+## What to capture
+
+Write a one-page brief covering four areas. Keep it factual.
 
 ### Business model
 
@@ -35,6 +38,15 @@ Write one page. Keep it factual.
 
 ## Done when
 
-- the brief fits on one page
-- the business model and bottlenecks are explicit
-- every later workflow can link back to this context
+- The brief fits on one page.
+- The business model and bottlenecks are explicit.
+- Every later workflow can link back to this context.
+
+## Worksheet
+
+Use the [company assessment worksheet](worksheet.md) to collect this in a
+structured format.
+
+## Next step
+
+[Map workflows →](../map/index.md)
