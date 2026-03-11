@@ -1,19 +1,19 @@
-# AI Transformation Playbook
+# AI Augmentation Playbook
 
-AI Transformation Playbook is a docs-first manual for researching workflows,
-scoring tasks, and launching controlled AI pilots.
+A step-by-step playbook for augmenting every employee with AI to multiply
+output without multiplying headcount.
 
 ## Start
 
 Open [docs/index.md](docs/index.md). The repo follows this path:
 
-1. understand the framework
-2. research the company
-3. map workflows
-4. score tasks
-5. pick and design the pilot
-6. review security and deployment constraints
-7. launch with governance
+1. understand why AI augmentation works
+2. analyse the company
+3. map each role's workflows
+4. score tasks for automation fit
+5. pick and design the augmentation
+6. review security, deployment, and cost
+7. launch, measure, and expand
 
 ## Stack
 

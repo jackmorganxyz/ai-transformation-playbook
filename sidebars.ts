@@ -5,13 +5,13 @@ const sidebars: SidebarsConfig = {
     'index',
     {
       type: 'category',
-      label: '1. Framework',
+      label: '1. Why AI Augmentation',
       link: {type: 'doc', id: 'overview/index'},
       items: [],
     },
     {
       type: 'category',
-      label: '2. Research the Company',
+      label: '2. Analyse the Company',
       link: {type: 'doc', id: 'company-research/index'},
       items: [
         'company-research/company-research-brief',
@@ -35,7 +35,7 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: '5. Pick and Design the Pilot',
+      label: '5. Pick and Design the Augmentation',
       link: {type: 'doc', id: 'automation-design/index'},
       items: [
         'automation-design/automation-prioritization',
@@ -69,7 +69,7 @@ const sidebars: SidebarsConfig = {
     {
       type: 'doc',
       id: 'automation-design/pilot-rollout-measurement-governance',
-      label: '7. Launch and Govern',
+      label: '7. Launch, Measure, and Expand',
     },
     {
       type: 'category',
